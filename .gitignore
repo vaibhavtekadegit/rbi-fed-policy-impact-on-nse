@@ -1,0 +1,3 @@
+data/raw/prices/
+.env
+*.parquet

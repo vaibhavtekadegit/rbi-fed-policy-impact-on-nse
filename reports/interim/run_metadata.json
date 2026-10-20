@@ -1,0 +1,38 @@
+{
+  "run_at": "2026-10-20T16:42:58",
+  "git_commit": "68f6a4d51083401d857de57b839ea604f5218a88",
+  "script": "src/analysis/interim_analysis.py",
+  "exit_code": 0,
+  "runtime_seconds": 21.7,
+  "python": "3.13.16",
+  "packages": {
+    "pandas": "2.2.3",
+    "numpy": "2.1.3",
+    "scipy": "1.16.3",
+    "statsmodels": "0.15.0",
+    "sklearn": "1.6.1",
+    "xgboost": "3.4.1",
+    "matplotlib": "3.10.0"
+  },
+  "outputs": [
+    "reports/interim/event_level_results.csv",
+    "reports/interim/figures/fig_abs_caar_placebo.png",
+    "reports/interim/figures/fig_ar_path.png",
+    "reports/interim/figures/fig_caar_box.png",
+    "reports/interim/figures/fig_caar_timeline.png",
+    "reports/interim/figures/fig_fed_surprise.png",
+    "reports/interim/figures/fig_policy_rates.png",
+    "reports/interim/figures/fig_sector_heatmap.png",
+    "reports/interim/placebo_days.csv",
+    "reports/interim/results.json",
+    "reports/interim/rq1_tests.csv",
+    "reports/interim/rq2_tests.csv",
+    "reports/interim/rq3_preliminary.csv",
+    "reports/interim/rq4_comparison.csv",
+    "reports/interim/rq4_performance.csv",
+    "reports/interim/rq4_xgb_importance.csv",
+    "reports/interim/run_log.txt",
+    "reports/interim/sector_mean_car.csv",
+    "reports/interim/stock_event_car.csv.gz"
+  ]
+}

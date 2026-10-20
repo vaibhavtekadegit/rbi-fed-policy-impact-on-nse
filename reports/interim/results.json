@@ -14,8 +14,8 @@
     "duplicate_stock_dates": 0
   },
   "rq1_magnitude_vs_placebo": {
-    "median_abs_event": 0.5143556161911422,
-    "median_abs_placebo": 0.5782704860175292,
+    "median_abs_event": 0.514355616191142,
+    "median_abs_placebo": 0.5782704860175293,
     "mean_abs_event": 0.6871716689955844,
     "mean_abs_placebo": 0.6805932689810773,
     "mannwhitney_U": 21169.0,
@@ -25,8 +25,8 @@
     "market_mw_p_one_sided": 0.28713352014353655
   },
   "icc": {
-    "car_0_1": 0.09535642728799103,
-    "pre_event_ar_day_m5": 0.06398643598831502
+    "car_0_1": 0.09535642728799101,
+    "pre_event_ar_day_m5": 0.06398643598831504
   },
   "rq4_split": {
     "train_events": 99,
@@ -73,13 +73,13 @@
     "stocks_per_event_mean": 436.3169014084507,
     "stocks_per_event_min": 389,
     "stocks_per_event_max": 493,
-    "car_raw_mean": -0.020092269478846226,
-    "car_raw_sd": 3.1250918841878708,
+    "car_raw_mean": -0.020092269478846268,
+    "car_raw_sd": 3.125091884187881,
     "car_raw_min": -40.297046938436694,
-    "car_raw_max": 42.690097056235864,
-    "caar_sd": 0.8906359901703458,
+    "car_raw_max": 42.69009705623587,
+    "caar_sd": 0.8906359901703456,
     "share_up_mean": 0.46317516004257103,
-    "beta_median": 0.9738420973473997,
+    "beta_median": 0.9738420973473996,
     "vix_mean": 15.222235915492957,
     "largest_pos": [
       [
@@ -125,7 +125,7 @@
     }
   },
   "fed_market_level_surprise": {
-    "coef": -0.01126368516003825,
+    "coef": -0.011263685160038254,
     "p": 0.6898258487742144,
     "r2": 0.004887143159100771,
     "n": 79

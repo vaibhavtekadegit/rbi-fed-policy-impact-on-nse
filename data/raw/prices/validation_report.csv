@@ -1,0 +1,502 @@
+symbol,isin,company,industry,rows,first_date,last_date,missing_days,bad_prices,big_moves,symbol_changes
+360ONE,INE466L01038,360 ONE WAM Ltd.,Financial Services,881,2023-03-02,2026-09-30,0.0,0.0,1.0,0.0
+ABB,INE117A01022,ABB India Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ACC,INE012A01025,ACC Ltd.,Construction Materials,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ACMESOLAR,INE622W01025,ACME Solar Holdings Ltd.,Power,464,2024-11-13,2026-09-30,0.0,0.0,0.0,0.0
+AIAENG,INE212H01026,AIA Engineering Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+APLAPOLLO,INE702C01027,APL Apollo Tubes Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+AUBANK,INE949L01017,AU Small Finance Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+AWL,INE699H01024,AWL Agri Business Ltd.,Fast Moving Consumer Goods,1146,2022-02-08,2026-09-30,0.0,0.0,0.0,0.0
+AADHARHFC,INE883F01010,Aadhar Housing Finance Ltd.,Financial Services,589,2024-05-15,2026-09-30,0.0,0.0,0.0,0.0
+AARTIIND,INE769A01020,Aarti Industries Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+AAVAS,INE216P01012,Aavas Financiers Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ABBOTINDIA,INE358A01014,Abbott India Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ACE,INE731H01025,Action Construction Equipment Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ACUTAAS,INE00FF01025,Acutaas Chemicals Ltd.,Healthcare,356,2025-04-25,2026-09-30,0.0,0.0,1.0,1.0
+ADANIENSOL,INE931S01010,Adani Energy Solutions Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+ADANIENT,INE423A01024,Adani Enterprises Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,4.0,0.0
+ADANIGREEN,INE364U01010,Adani Green Energy Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+ADANIPORTS,INE742F01042,Adani Ports and Special Economic Zone Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+ADANIPOWER,INE814H01029,Adani Power Ltd.,Power,253,2025-09-22,2026-09-30,0.0,0.0,1.0,0.0
+ATGL,INE399L01023,Adani Total Gas Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ABCAPITAL,INE674K01013,Aditya Birla Capital Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ABREL,INE055A01016,Aditya Birla Real Estate Ltd.,Realty,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+ABSLAMC,INE404A01024,Aditya Birla Sun Life AMC Ltd.,Financial Services,1228,2021-10-11,2026-09-30,0.0,0.0,0.0,0.0
+CPPLUS,INE819V01029,Aditya Infotech Ltd.,Capital Goods,285,2025-08-05,2026-09-30,0.0,0.0,1.0,0.0
+AEGISLOG,INE208C01025,Aegis Logistics Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+AEGISVOPAK,INE0INX01018,Aegis Vopak Terminals Ltd.,Oil Gas & Consumable Fuels,331,2025-06-02,2026-09-30,0.0,0.0,0.0,0.0
+AETHER,INE0BWX01014,Aether Industries Ltd.,Chemicals,1068,2022-06-03,2026-09-30,0.0,0.0,1.0,0.0
+AFCONS,INE101I01011,Afcons Infrastructure Ltd.,Construction,471,2024-11-04,2026-09-30,0.0,0.0,0.0,0.0
+AFFLE,INE00WC01027,Affle 3i Ltd.,Information Technology,1229,2021-10-08,2026-09-30,0.0,0.0,0.0,0.0
+AJANTPHARM,INE031B01049,Ajanta Pharmaceuticals Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+ALKEM,INE540L01014,Alkem Laboratories Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ABDL,INE552Z01027,Allied Blenders and Distillers Ltd.,Fast Moving Consumer Goods,557,2024-07-02,2026-09-30,0.0,0.0,0.0,0.0
+ARE&M,INE885A01032,Amara Raja Energy & Mobility Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+AMBER,INE371P01015,Amber Enterprises India Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+AMBUJACEM,INE079A01024,Ambuja Cements Ltd.,Construction Materials,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ANANDRATHI,INE463V01026,Anand Rathi Wealth Ltd.,Financial Services,1185,2021-12-14,2026-09-30,0.0,0.0,2.0,0.0
+ANANTRAJ,INE242C01024,Anant Raj Ltd.,Realty,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ANGELONE,INE732I01021,Angel One Ltd.,Financial Services,146,2026-02-26,2026-09-30,0.0,0.0,1.0,0.0
+ANTHEM,INE0CZ201020,Anthem Biosciences Ltd.,Healthcare,296,2025-07-21,2026-09-30,0.0,0.0,1.0,0.0
+ANURAS,INE930P01018,Anupam Rasayan India Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+APARINDS,INE372A01015,Apar Industries Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+APOLLOHOSP,INE437A01024,Apollo Hospitals Enterprise Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+APOLLOTYRE,INE438A01022,Apollo Tyres Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+APTUS,INE852O01025,Aptus Value Housing Finance India Ltd.,Financial Services,1261,2021-08-24,2026-09-30,0.0,0.0,0.0,0.0
+ASAHIINDIA,INE439A01020,Asahi India Glass Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ASHOKLEY,INE208A01029,Ashok Leyland Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+ASIANPAINT,INE021A01026,Asian Paints Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ASTERDM,INE914M01019,Aster DM Quality Care Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+ASTRAL,INE006I01046,Astral Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+ATHERENERG,INE0LEZ01016,Ather Energy Ltd.,Automobile and Auto Components,350,2025-05-06,2026-09-30,0.0,0.0,0.0,0.0
+ATUL,INE100A01010,Atul Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+AUROPHARMA,INE406A01037,Aurobindo Pharma Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+AIIL,INE206F01022,Authum Investment & Infrastructure Ltd.,Financial Services,604,2024-04-23,2026-09-30,0.0,0.0,1.0,0.0
+AVANTIFEED,INE871C01038,Avanti Feeds Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+DMART,INE192R01011,Avenue Supermarts Ltd.,Consumer Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+AXISBANK,INE238A01034,Axis Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+AZAD,INE02IJ01035,Azad Engineering Ltd.,Capital Goods,680,2023-12-28,2026-09-30,0.0,0.0,1.0,0.0
+BEML,INE258A01024,BEML Ltd.,Capital Goods,225,2025-11-03,2026-09-30,0.0,0.0,1.0,0.0
+BLS,INE153T01027,BLS International Services Ltd.,Consumer Services,1358,2021-04-01,2026-09-30,0.0,0.0,2.0,0.0
+BSE,INE118H01025,BSE Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,2.0,0.0
+BAGMANE,INE2OVN25015,Bagmane Prime Office REIT,Realty,0,,,,,,
+BAJAJ-AUTO,INE917I01010,Bajaj Auto Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BAJFINANCE,INE296A01032,Bajaj Finance Ltd.,Financial Services,321,2025-06-16,2026-09-30,0.0,0.0,1.0,0.0
+BAJAJFINSV,INE918I01026,Bajaj Finserv Ltd.,Financial Services,998,2022-09-14,2026-09-30,0.0,0.0,0.0,0.0
+BAJAJHLDNG,INE118A01012,Bajaj Holdings & Investment Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BAJAJHFL,INE377Y01014,Bajaj Housing Finance Ltd.,Financial Services,505,2024-09-16,2026-09-30,0.0,0.0,1.0,0.0
+BALKRISIND,INE787D01026,Balkrishna Industries Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BALRAMCHIN,INE119A01028,Balrampur Chini Mills Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BANDHANBNK,INE545U01014,Bandhan Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BANKBARODA,INE028A01039,Bank of Baroda,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BANKINDIA,INE084A01016,Bank of India,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MAHABANK,INE457A01014,Bank of Maharashtra,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BATAINDIA,INE176A01028,Bata India Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BELRISE,INE894V01022,Belrise Industries Ltd.,Automobile and Auto Components,334,2025-05-28,2026-09-30,0.0,0.0,0.0,0.0
+BERGEPAINT,INE463A01038,Berger Paints India Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BHARATCOAL,INE05XR01022,Bharat Coking Coal Ltd.,Oil Gas & Consumable Fuels,173,2026-01-19,2026-09-30,0.0,0.0,1.0,0.0
+BDL,INE171Z01026,Bharat Dynamics Ltd.,Capital Goods,582,2024-05-27,2026-09-30,0.0,0.0,0.0,0.0
+BEL,INE263A01024,Bharat Electronics Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+BHARATFORG,INE465A01025,Bharat Forge Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BHEL,INE257A01026,Bharat Heavy Electricals Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+BPCL,INE029A01011,Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+BHARTIARTL,INE397D01024,Bharti Airtel Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BHARTIHEXA,INE343G01021,Bharti Hexacom Ltd.,Telecommunication,610,2024-04-12,2026-09-30,0.0,0.0,1.0,0.0
+GROWW,INE0HOQ01053,Billionbrains Garage Ventures Ltd.,Financial Services,219,2025-11-12,2026-09-30,0.0,0.0,1.0,0.0
+BIOCON,INE376G01013,Biocon Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BSOFT,INE836A01035,Birlasoft Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BBOX,INE676A01027,Black Box Ltd.,Information Technology,1081,2022-05-17,2026-09-30,0.0,0.0,0.0,0.0
+BLUESTARCO,INE472A01039,Blue Star Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+BOSCHLTD,INE323A01026,Bosch Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+FIRSTCRY,INE02RE01045,Brainbees Solutions Ltd.,Consumer Services,528,2024-08-13,2026-09-30,0.0,0.0,1.0,0.0
+BRIGADE,INE791I01019,Brigade Enterprises Ltd.,Realty,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+BRITANNIA,INE216A01030,Britannia Industries Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+BIRET,INE0FDU25010,Brookfield India Real Estate Trust,Realty,0,,,,,,
+CCL,INE421D01022,CCL Products (I) Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CESC,INE486A01021,CESC Ltd.,Power,1243,2021-09-20,2026-09-30,0.0,0.0,0.0,0.0
+CGPOWER,INE067A01029,CG Power and Industrial Solutions Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CIEINDIA,INE536H01010,CIE Automotive India Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+CRISIL,INE007A01025,CRISIL Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CANFINHOME,INE477A01020,Can Fin Homes Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CANBK,INE476A01022,Canara Bank,Financial Services,589,2024-05-15,2026-09-30,0.0,0.0,1.0,0.0
+CANHLIFE,INE01TY01017,Canara HSBC Life Insurance Company Ltd.,Financial Services,235,2025-10-17,2026-09-30,0.0,0.0,0.0,0.0
+CAPLIPOINT,INE475E01026,Caplin Point Laboratories Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CGCL,INE180C01042,Capri Global Capital Ltd.,Financial Services,634,2024-03-05,2026-09-30,0.0,0.0,1.0,0.0
+CARBORUNIV,INE120A01034,Carborundum Universal Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CARTRADE,INE290S01011,Cartrade Tech Ltd.,Consumer Services,1263,2021-08-20,2026-09-30,0.0,0.0,0.0,0.0
+CASTROLIND,INE172A01027,Castrol India Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CEATLTD,INE482A01020,Ceat Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CEMPRO,INE686A01026,Cemindia Projects Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+CENTRALBK,INE483A01010,Central Bank of India,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CDSL,INE736A01011,Central Depository Services (India) Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+CMPDI,INE05HV01027,Central Mine Planning & Design Institute Ltd.,Services,126,2026-03-30,2026-09-30,0.0,0.0,0.0,0.0
+CHAMBLFERT,INE085A01013,Chambal Fertilizers & Chemicals Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CHENNPETRO,INE178A01016,Chennai Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CHOICEIN,INE102B01014,Choice International Ltd.,Financial Services,1105,2022-04-08,2026-09-30,0.0,0.0,2.0,0.0
+CHOLAHLDNG,INE149A01033,Cholamandalam Financial Holdings Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CHOLAFIN,INE121A01024,Cholamandalam Investment and Finance Company Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CIPLA,INE059A01026,Cipla Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CUB,INE491A01021,City Union Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+CLEANMAX,INE647U01026,Clean Max Enviro Energy Solutions Ltd.,Power,144,2026-03-02,2026-09-30,0.0,0.0,0.0,0.0
+CLEAN,INE227W01023,Clean Science and Technology Ltd.,Chemicals,1285,2021-07-19,2026-09-30,0.0,0.0,1.0,0.0
+COALINDIA,INE522F01014,Coal India Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+COCHINSHIP,INE704P01025,Cochin Shipyard Ltd.,Capital Goods,671,2024-01-10,2026-09-30,0.0,0.0,1.0,0.0
+COFORGE,INE591G01025,Coforge Ltd.,Information Technology,329,2025-06-04,2026-09-30,0.0,0.0,1.0,0.0
+COHANCE,INE03QK01018,Cohance Lifesciences Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+COLPAL,INE259A01022,Colgate Palmolive (India) Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CAMS,INE596I01020,Computer Age Management Services Ltd.,Financial Services,202,2025-12-05,2026-09-30,0.0,0.0,1.0,0.0
+CONCORDBIO,INE338H01029,Concord Biotech Ltd.,Healthcare,768,2023-08-18,2026-09-30,0.0,0.0,1.0,0.0
+CONCOR,INE111A01025,Container Corporation of India Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+COROMANDEL,INE169A01031,Coromandel International Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CRAFTSMAN,INE00LO01017,Craftsman Automation Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CREDITACC,INE741K01010,CreditAccess Grameen Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CROMPTON,INE299U01018,Crompton Greaves Consumer Electricals Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CUMMINSIND,INE298A01020,Cummins India Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+CUPID,INE509F01029,Cupid Ltd.,Fast Moving Consumer Goods,614,2024-04-05,2026-09-30,0.0,0.0,1.0,0.0
+CYIENT,INE136B01020,Cyient Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+DLF,INE271C01023,DLF Ltd.,Realty,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+DOMS,INE321T01012,DOMS Industries Ltd.,Fast Moving Consumer Goods,685,2023-12-20,2026-09-30,0.0,0.0,1.0,0.0
+DABUR,INE016A01026,Dabur India Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+DALBHARAT,INE00R701025,Dalmia Bharat Ltd.,Construction Materials,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+DATAPATTNS,INE0IX101010,Data Patterns (India) Ltd.,Capital Goods,1177,2021-12-24,2026-09-30,0.0,0.0,1.0,0.0
+DEEPAKFERT,INE501A01019,Deepak Fertilisers & Petrochemicals Corp. Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+DEEPAKNTR,INE288B01029,Deepak Nitrite Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+DELHIVERY,INE148O01028,Delhivery Ltd.,Services,1076,2022-05-24,2026-09-30,0.0,0.0,0.0,0.0
+DEVYANI,INE872J01023,Devyani International Ltd.,Consumer Services,1266,2021-08-16,2026-09-30,0.0,0.0,1.0,0.0
+DIVISLAB,INE361B01024,Divi's Laboratories Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+DIXON,INE935N01020,Dixon Technologies (India) Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+LALPATHLAB,INE600L01024,Dr. Lal Path Labs Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+DRREDDY,INE089A01031,Dr. Reddy's Laboratories Ltd.,Healthcare,476,2024-10-28,2026-09-30,0.0,0.0,1.0,0.0
+DUMMYHEG,DUM545A01024,Dummy HEG Ltd.,Capital Goods,0,,,,,,
+EIDPARRY,INE126A01031,E.I.D. Parry (India) Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+EIHOTEL,INE230A01023,EIH Ltd.,Consumer Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+EMBASSY,INE041025011,EMBASSY OFFICE PARKS REIT,Realty,0,,,,,,
+EICHERMOT,INE066A01021,Eicher Motors Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ELECON,INE205B01031,Elecon Engineering Co. Ltd.,Capital Goods,545,2024-07-19,2026-09-30,0.0,0.0,1.0,0.0
+ELGIEQUIP,INE285A01027,Elgi Equipments Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+EMAMILTD,INE548C01032,Emami Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+EMCURE,INE168P01015,Emcure Pharmaceuticals Ltd.,Healthcare,551,2024-07-10,2026-09-30,0.0,0.0,1.0,0.0
+EMMVEE,INE1C6T01020,Emmvee Photovoltaic Power Ltd.,Capital Goods,215,2025-11-18,2026-09-30,0.0,0.0,0.0,0.0
+ENDURANCE,INE913H01037,Endurance Technologies Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ENGINERSIN,INE510A01028,Engineers India Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ESCORTS,INE042A01014,Escorts Kubota Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ETERNAL,INE758T01015,Eternal Ltd.,Consumer Services,1282,2021-07-23,2026-09-30,0.0,0.0,1.0,1.0
+EXIDEIND,INE302A01020,Exide Industries Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NYKAA,INE388Y01029,FSN E-Commerce Ventures Ltd.,Consumer Services,1208,2021-11-10,2026-09-30,0.0,0.0,2.0,0.0
+FEDERALBNK,INE171A01029,Federal Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+FACT,INE188A01015,Fertilisers and Chemicals Travancore Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+FINCABLES,INE235A01022,Finolex Cables Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+FSL,INE684F01012,Firstsource Solutions Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+FIVESTAR,INE128S01021,Five-Star Business Finance Ltd.,Financial Services,953,2022-11-21,2026-09-30,0.0,0.0,0.0,0.0
+FORCEMOT,INE451A01017,Force Motors Ltd.,Automobile and Auto Components,1284,2021-04-01,2026-09-30,74.0,0.0,0.0,0.0
+FORTIS,INE061F01013,Fortis Healthcare Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+FRACTAL,INE212S01015,Fractal Analytics Ltd.,Information Technology,154,2026-02-16,2026-09-30,0.0,0.0,0.0,0.0
+GAIL,INE129A01019,GAIL (India) Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+GVT&D,INE200A01026,GE Vernova T&D India Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+GMRAIRPORT,INE776C01039,GMR Airports Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+GABRIEL,INE524A01029,Gabriel India Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GALLANTT,INE297H01019,Gallantt Ispat Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GRSE,INE382Z01011,Garden Reach Shipbuilders & Engineers Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GICRE,INE481Y01014,General Insurance Corporation of India,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GILLETTE,INE322A01010,Gillette India Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GLAND,INE068V01023,Gland Pharma Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GLAXO,INE159A01016,Glaxosmithkline Pharmaceuticals Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GLENMARK,INE935A01035,Glenmark Pharmaceuticals Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MEDANTA,INE474Q01031,Global Health Ltd.,Healthcare,956,2022-11-16,2026-09-30,0.0,0.0,1.0,0.0
+GPIL,INE177H01039,Godawari Power & Ispat Ltd.,Capital Goods,492,2024-10-04,2026-09-30,0.0,0.0,1.0,0.0
+GODFRYPHLP,INE260B01028,Godfrey Phillips India Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+GODREJCP,INE102D01028,Godrej Consumer Products Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+GODREJIND,INE233A01035,Godrej Industries Ltd.,Diversified,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GODREJPROP,INE484J01027,Godrej Properties Ltd.,Realty,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GRANULES,INE101D01020,Granules India Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GRAPHITE,INE371A01025,Graphite India Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GRASIM,INE047A01021,Grasim Industries Ltd.,Construction Materials,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GRAVITA,INE024L01027,Gravita India Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GESHIP,INE017A01032,Great Eastern Shipping Co. Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+FLUOROCHEM,INE09N301011,Gujarat Fluorochemicals Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+GMDCLTD,INE131A01031,Gujarat Mineral Development Corporation Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HBLENGINE,INE292B01021,HBL Engineering Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+HCLTECH,INE860A01027,HCL Technologies Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HDBFS,INE756I01012,HDB Financial Services Ltd.,Financial Services,309,2025-07-02,2026-09-30,0.0,0.0,0.0,0.0
+HDFCAMC,INE127D01025,HDFC Asset Management Company Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+HDFCBANK,INE040A01034,HDFC Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+HDFCLIFE,INE795G01014,HDFC Life Insurance Company Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HEGAM,INE545A01024,HEG Advanced Materials Ltd.,Capital Goods,482,2024-10-18,2026-09-30,0.0,0.0,2.0,1.0
+HFCL,INE548A01028,HFCL Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HAVELLS,INE176B01034,Havells India Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HEROMOTOCO,INE158A01026,Hero MotoCorp Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HEXT,INE093A01041,Hexaware Technologies Ltd.,Information Technology,397,2025-02-19,2026-09-30,0.0,0.0,0.0,0.0
+HSCL,INE019C01026,Himadri Speciality Chemical Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HINDALCO,INE038A01020,Hindalco Industries Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HAL,INE066F01020,Hindustan Aeronautics Ltd.,Capital Goods,740,2023-09-28,2026-09-30,0.0,0.0,1.0,0.0
+HINDCOPPER,INE531E01026,Hindustan Copper Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HINDPETRO,INE094A01015,Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+HINDUNILVR,INE030A01027,Hindustan Unilever Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HINDZINC,INE267A01025,Hindustan Zinc Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+POWERINDIA,INE07Y701011,Hitachi Energy India Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HOMEFIRST,INE481N01025,Home First Finance Company India Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HONASA,INE0J5401028,Honasa Consumer Ltd.,Fast Moving Consumer Goods,714,2023-11-07,2026-09-30,0.0,0.0,0.0,0.0
+HONAUT,INE671A01010,Honeywell Automation India Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HUDCO,INE031A01017,Housing & Urban Development Corporation Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+HYUNDAI,INE0V6F01027,Hyundai Motor India Ltd.,Automobile and Auto Components,480,2024-10-22,2026-09-30,0.0,0.0,0.0,0.0
+ICICIBANK,INE090A01021,ICICI Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ICICIGI,INE765G01017,ICICI Lombard General Insurance Company Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ICICIAMC,INE346A01027,ICICI Prudential Asset Management Company Ltd.,Financial Services,192,2025-12-19,2026-09-30,0.0,0.0,0.0,0.0
+ICICIPRULI,INE726G01019,ICICI Prudential Life Insurance Company Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+IDBI,INE008A01015,IDBI Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+IDFCFIRSTB,INE092T01019,IDFC First Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+IFCI,INE039A01010,IFCI Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+IIFL,INE530B01024,IIFL Finance Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+INOXINDIA,INE616N01034,INOX India Ltd.,Capital Goods,684,2023-12-21,2026-09-30,0.0,0.0,1.0,0.0
+IRB,INE821I01022,IRB Infrastructure Developers Ltd.,Construction,887,2023-02-22,2026-09-30,0.0,0.0,2.0,0.0
+IRCON,INE962Y01021,IRCON International Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+ITCHOTELS,INE379A01028,ITC Hotels Ltd.,Consumer Services,412,2025-01-29,2026-09-30,0.0,0.0,1.0,0.0
+ITC,INE154A01025,ITC Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ITI,INE248A01017,ITI Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+INDIACEM,INE383A01012,India Cements Ltd.,Construction Materials,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+INDIAMART,INE933S01016,Indiamart Intermesh Ltd.,Consumer Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+INDIANB,INE562A01011,Indian Bank,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+IEX,INE022Q01020,Indian Energy Exchange Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,2.0,0.0
+INDHOTEL,INE053A01029,Indian Hotels Co. Ltd.,Consumer Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+IOC,INE242A01010,Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+IOB,INE565A01014,Indian Overseas Bank,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+IRCTC,INE335Y01020,Indian Railway Catering And Tourism Corporation Ltd.,Consumer Services,1215,2021-10-29,2026-09-30,0.0,0.0,0.0,0.0
+IRFC,INE053F01010,Indian Railway Finance Corporation Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+IREDA,INE202E01016,Indian Renewable Energy Development Agency Ltd.,Financial Services,700,2023-11-29,2026-09-30,0.0,0.0,1.0,0.0
+IGL,INE203G01027,Indraprastha Gas Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+INDUSTOWER,INE121J01017,Indus Towers Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+INDUSINDBK,INE095A01012,IndusInd Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+NAUKRI,INE663F01032,Info Edge (India) Ltd.,Consumer Services,349,2025-05-07,2026-09-30,0.0,0.0,1.0,0.0
+INFY,INE009A01021,Infosys Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+INOXWIND,INE066P01011,Inox Wind Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+INTELLECT,INE306R01017,Intellect Design Arena Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+INDIGO,INE646L01027,InterGlobe Aviation Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+IGIL,INE0Q9301021,International Gemological Institute Ltd.,Services,439,2024-12-20,2026-09-30,0.0,0.0,0.0,0.0
+IKS,INE115Q01022,Inventurus Knowledge Solutions Ltd.,Information Technology,440,2024-12-19,2026-09-30,0.0,0.0,1.0,0.0
+IPCALAB,INE571A01038,Ipca Laboratories Ltd.,Healthcare,1165,2022-01-11,2026-09-30,0.0,0.0,0.0,0.0
+JKCEMENT,INE823G01014,J.K. Cement Ltd.,Construction Materials,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+JBMA,INE927D01051,JBM Auto Ltd.,Automobile and Auto Components,410,2025-01-31,2026-09-30,0.0,0.0,1.0,0.0
+JKTYRE,INE573A01042,JK Tyre & Industries Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+JMFINANCIL,INE780C01023,JM Financial Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+JSWCEMENT,INE718I01012,JSW Cement Ltd.,Construction Materials,278,2025-08-14,2026-09-30,0.0,0.0,0.0,0.0
+JSWENERGY,INE121E01018,JSW Energy Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+JSWINFRA,INE880J01026,JSW Infrastructure Ltd.,Services,738,2023-10-03,2026-09-30,0.0,0.0,1.0,0.0
+JSWSTEEL,INE019A01038,JSW Steel Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+JAINREC,INE0YD401026,Jain Resource Recycling Ltd.,Metals & Mining,246,2025-10-01,2026-09-30,0.0,0.0,1.0,0.0
+JPPOWER,INE351F01018,Jaiprakash Power Ventures Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+J&KBANK,INE168A01041,Jammu & Kashmir Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+JINDALSAW,INE324A01032,Jindal Saw Ltd.,Capital Goods,489,2024-10-09,2026-09-30,0.0,0.0,1.0,0.0
+JSL,INE220G01021,Jindal Stainless Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+JINDALSTEL,INE749A01030,Jindal Steel Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+JIOFIN,INE758E01017,Jio Financial Services Ltd.,Financial Services,767,2023-08-21,2026-09-30,0.0,0.0,0.0,0.0
+JUBLFOOD,INE797F01020,Jubilant Foodworks Ltd.,Consumer Services,1099,2022-04-20,2026-09-30,0.0,0.0,0.0,0.0
+JUBLINGREA,INE0BY001018,Jubilant Ingrevia Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+JWL,INE209L01016,Jupiter Wagons Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+JYOTICNC,INE980O01024,Jyoti CNC Automation Ltd.,Capital Goods,667,2024-01-16,2026-09-30,0.0,0.0,1.0,0.0
+KPRMILL,INE930H01031,K.P.R. Mill Ltd.,Textiles,1238,2021-09-27,2026-09-30,0.0,0.0,0.0,0.0
+KEI,INE878B01027,KEI Industries Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+KPITTECH,INE04I401011,KPIT Technologies Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+KSB,INE999A01023,KSB Ltd.,Capital Goods,541,2024-07-25,2026-09-30,0.0,0.0,1.0,0.0
+KAJARIACER,INE217B01036,Kajaria Ceramics Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+KPIL,INE220B01022,Kalpataru Projects International Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+KALYANKJIL,INE303R01014,Kalyan Jewellers India Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+KARURVYSYA,INE036D01028,Karur Vysya Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+KAYNES,INE918Z01012,Kaynes Technology India Ltd.,Capital Goods,952,2022-11-22,2026-09-30,0.0,0.0,1.0,0.0
+KEC,INE389H01022,Kec International Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+KFINTECH,INE138Y01010,Kfin Technologies Ltd.,Financial Services,925,2022-12-29,2026-09-30,0.0,0.0,0.0,0.0
+KIRLOSBROS,INE732A01036,Kirloskar Brothers Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+KIRLOSENG,INE146L01010,Kirloskar Oil Eng Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+KOTAKBANK,INE237A01036,Kotak Mahindra Bank Ltd.,Financial Services,175,2026-01-14,2026-09-30,0.0,0.0,1.0,0.0
+KIMS,INE967H01025,Krishna Institute of Medical Sciences Ltd.,Healthcare,506,2024-09-13,2026-09-30,0.0,0.0,1.0,0.0
+LTF,INE498L01015,L&T Finance Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+LTTS,INE010V01017,L&T Technology Services Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+LGEINDIA,INE324D01010,LG Electronics India Ltd.,Consumer Durables,238,2025-10-14,2026-09-30,0.0,0.0,1.0,0.0
+LICHSGFIN,INE115A01026,LIC Housing Finance Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+LTFOODS,INE818H01020,LT Foods Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+LTM,INE214T01019,LTM Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,2.0
+LT,INE018A01030,Larsen & Toubro Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+LAURUSLABS,INE947Q01028,Laurus Labs Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+LEMONTREE,INE970X01018,Lemon Tree Hotels Ltd.,Consumer Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+LENSKART,INE956O01016,Lenskart Solutions Ltd.,Consumer Services,221,2025-11-10,2026-09-30,0.0,0.0,0.0,0.0
+LICI,INE0J1Y01017,Life Insurance Corporation of India,Financial Services,1081,2022-05-17,2026-09-30,0.0,0.0,1.0,0.0
+LINDEINDIA,INE473A01011,Linde India Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+LLOYDSME,INE281B01032,Lloyds Metals And Energy Ltd.,Metals & Mining,791,2023-07-17,2026-09-30,0.0,0.0,0.0,0.0
+LODHA,INE670K01029,Lodha Developers Ltd.,Realty,1348,2021-04-19,2026-09-30,0.0,0.0,1.0,0.0
+LUPIN,INE326A01037,Lupin Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MMTC,INE123F01029,MMTC Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MRF,INE883A01011,MRF Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MTARTECH,INE864I01014,MTAR Technologies Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MGL,INE002S01010,Mahanagar Gas Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+M&MFIN,INE774D01024,Mahindra & Mahindra Financial Services Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+M&M,INE101A01026,Mahindra & Mahindra Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MANAPPURAM,INE522D01027,Manappuram Finance Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MRPL,INE103A01014,Mangalore Refinery & Petrochemicals Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MANKIND,INE634S01028,Mankind Pharma Ltd.,Healthcare,839,2023-05-09,2026-09-30,0.0,0.0,1.0,0.0
+MARICO,INE196A01026,Marico Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MARUTI,INE585B01010,Maruti Suzuki India Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MFSL,INE180A01020,Max Financial Services Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MAXHEALTH,INE027H01010,Max Healthcare Institute Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MAZDOCK,INE249Z01020,Mazagoan Dock Shipbuilders Ltd.,Capital Goods,435,2024-12-27,2026-09-30,0.0,0.0,1.0,0.0
+MEESHO,INE0VDM01015,Meesho Ltd.,Consumer Services,199,2025-12-10,2026-09-30,0.0,0.0,1.0,0.0
+MINDACORP,INE842C01021,Minda Corporation Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MSUMI,INE0FS801015,Motherson Sumi Wiring India Ltd.,Automobile and Auto Components,1114,2022-03-28,2026-09-30,0.0,0.0,3.0,0.0
+MOTILALOFS,INE338I01027,Motilal Oswal Financial Services Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+MPHASIS,INE356A01018,MphasiS Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+MCX,INE745G01043,Multi Commodity Exchange of India Ltd.,Financial Services,183,2026-01-02,2026-09-30,0.0,0.0,1.0,0.0
+MUTHOOTFIN,INE414G01012,Muthoot Finance Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NATCOPHARM,INE987B01026,NATCO Pharma Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NBCC,INE095N01031,NBCC (India) Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+NCC,INE868B01028,NCC Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NHPC,INE848E01016,NHPC Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NLCINDIA,INE589A01014,NLC India Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NMDC,INE584A01023,NMDC Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,2.0,0.0
+NSLNISP,INE0NNS01018,NMDC Steel Ltd.,Metals & Mining,889,2023-02-20,2026-09-30,0.0,0.0,1.0,0.0
+NTPCGREEN,INE0ONG01011,NTPC Green Energy Ltd.,Power,456,2024-11-27,2026-09-30,0.0,0.0,0.0,0.0
+NTPC,INE733E01010,NTPC Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NH,INE410P01011,Narayana Hrudayalaya Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NATIONALUM,INE139A01034,National Aluminium Co. Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NAVA,INE725A01030,Nava Ltd.,Power,419,2025-01-20,2026-09-30,0.0,0.0,1.0,0.0
+NAVINFLUOR,INE048G01026,Navin Fluorine International Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NESTLEIND,INE239A01024,Nestle India Ltd.,Fast Moving Consumer Goods,674,2024-01-05,2026-09-30,0.0,0.0,2.0,0.0
+NETWEB,INE0NT901020,Netweb Technologies India Ltd.,Information Technology,783,2023-07-27,2026-09-30,0.0,0.0,1.0,0.0
+NEULANDLAB,INE794A01010,Neuland Laboratories Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+NAM-INDIA,INE298J01013,Nippon Life India Asset Management Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+NUVAMA,INE531F01023,Nuvama Wealth Management Ltd.,Financial Services,188,2025-12-26,2026-09-30,0.0,0.0,1.0,0.0
+NUVOCO,INE118D01016,Nuvoco Vistas Corporation Ltd.,Construction Materials,1262,2021-08-23,2026-09-30,0.0,0.0,0.0,0.0
+OBEROIRLTY,INE093I01010,Oberoi Realty Ltd.,Realty,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ONGC,INE213A01029,Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+OIL,INE274J01014,Oil India Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+OLAELEC,INE0LXG01040,Ola Electric Mobility Ltd.,Automobile and Auto Components,530,2024-08-09,2026-09-30,0.0,0.0,0.0,0.0
+OLECTRA,INE260D01016,Olectra Greentech Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+PAYTM,INE982J01020,One 97 Communications Ltd.,Financial Services,1202,2021-11-18,2026-09-30,0.0,0.0,2.0,0.0
+ONESOURCE,INE013P01021,Onesource Specialty Pharma Ltd.,Healthcare,415,2025-01-24,2026-09-30,0.0,0.0,0.0,0.0
+OFSS,INE881D01027,Oracle Financial Services Software Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+POLICYBZR,INE417T01026,PB Fintech Ltd.,Financial Services,1205,2021-11-15,2026-09-30,0.0,0.0,2.0,0.0
+PCBL,INE602A01031,PCBL Chemical Ltd.,Chemicals,1103,2022-04-12,2026-09-30,0.0,0.0,0.0,0.0
+PGEL,INE457L01029,PG Electroplast Ltd.,Consumer Durables,551,2024-07-10,2026-09-30,0.0,0.0,2.0,0.0
+PIIND,INE603J01030,PI Industries Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+PNBHOUSING,INE572E01012,PNB Housing Finance Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+PTCIL,INE596F01018,PTC Industries Ltd.,Capital Goods,816,2023-06-09,2026-09-30,0.0,0.0,1.0,0.0
+PVRINOX,INE191H01014,PVR INOX Ltd.,Media Entertainment & Publication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+PAGEIND,INE761H01022,Page Industries Ltd.,Textiles,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+PARADEEP,INE088F01024,Paradeep Phosphates Ltd.,Chemicals,1073,2022-05-27,2026-09-30,0.0,0.0,0.0,0.0
+PATANJALI,INE619A01035,Patanjali Foods Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,1.0
+PERSISTENT,INE262H01021,Persistent Systems Ltd.,Information Technology,619,2024-03-28,2026-09-30,0.0,0.0,1.0,0.0
+PETRONET,INE347G01014,Petronet LNG Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+PHOENIXLTD,INE211B01039,Phoenix Mills Ltd.,Realty,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+PWL,INE0LP301011,Physicswallah Ltd.,Consumer Services,215,2025-11-18,2026-09-30,0.0,0.0,1.0,0.0
+PIDILITIND,INE318A01026,Pidilite Industries Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+PINELABS,INE15B701018,Pine Labs Ltd.,Financial Services,217,2025-11-14,2026-09-30,0.0,0.0,0.0,0.0
+PIRAMALFIN,INE202B01038,Piramal Finance Ltd.,Financial Services,222,2025-11-07,2026-09-30,0.0,0.0,0.0,0.0
+PPLPHARMA,INE0DK501011,Piramal Pharma Ltd.,Healthcare,974,2022-10-19,2026-09-30,0.0,0.0,1.0,0.0
+POLYMED,INE205C01021,Poly Medicure Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+POLYCAB,INE455K01017,Polycab India Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+POONAWALLA,INE511C01022,Poonawalla Fincorp Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+PFC,INE134E01011,Power Finance Corporation Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+POWERGRID,INE752E01010,Power Grid Corporation of India Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,2.0,0.0
+PREMIERENE,INE0BS701011,Premier Energies Ltd.,Capital Goods,514,2024-09-03,2026-09-30,0.0,0.0,1.0,0.0
+PRESTIGE,INE811K01011,Prestige Estates Projects Ltd.,Realty,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+PFOCUS,INE367G01038,Prime Focus Ltd.,Media Entertainment & Publication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+PRIVISCL,INE959A01019,Privi Speciality Chemicals Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+PNB,INE160A01022,Punjab National Bank,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+RRKABEL,INE777K01022,R R Kabel Ltd.,Capital Goods,746,2023-09-20,2026-09-30,0.0,0.0,0.0,0.0
+RBLBANK,INE976G01028,RBL Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+RECLTD,INE020B01018,REC Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,2.0,0.0
+RHIM,INE743M01012,RHI MAGNESITA INDIA LTD.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+RITES,INE320J01015,RITES Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+RADICO,INE944F01028,Radico Khaitan Ltd,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+RVNL,INE415G01027,Rail Vikas Nigam Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+RAILTEL,INE0DD101019,Railtel Corporation Of India Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+RAINBOW,INE961O01016,Rainbow Childrens Medicare Ltd.,Healthcare,1086,2022-05-10,2026-09-30,0.0,0.0,0.0,0.0
+RKFORGE,INE399G01023,Ramkrishna Forgings Ltd.,Automobile and Auto Components,1122,2022-03-15,2026-09-30,0.0,0.0,0.0,0.0
+REDINGTON,INE891D01026,Redington Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+RELIANCE,INE002A01018,Reliance Industries Ltd.,Oil Gas & Consumable Fuels,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+RPOWER,INE614G01033,Reliance Power Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+RUBICON,INE506V01022,Rubicon Research Ltd.,Healthcare,236,2025-10-16,2026-09-30,0.0,0.0,1.0,0.0
+SBICARD,INE018E01016,SBI Cards and Payment Services Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SBILIFE,INE123W01016,SBI Life Insurance Company Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SJVN,INE002L01015,SJVN Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SHRIPISTON,INE526E01018,SPR Auto Technologies Ltd.,Automobile and Auto Components,1355,2021-04-01,2026-09-30,3.0,0.0,1.0,0.0
+SRF,INE647A01010,SRF Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+SAGILITY,INE0W2G01015,Sagility Ltd.,Information Technology,465,2024-11-12,2026-09-30,0.0,0.0,0.0,0.0
+SAILIFE,INE570L01029,Sai Life Sciences Ltd.,Healthcare,441,2024-12-18,2026-09-30,0.0,0.0,1.0,0.0
+SAMMAANCAP,INE148I01020,Sammaan Capital Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,1.0
+MOTHERSON,INE775A01035,Samvardhana Motherson International Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,3.0,1.0
+SANSERA,INE953O01021,Sansera Engineering Ltd.,Automobile and Auto Components,1239,2021-09-24,2026-09-30,0.0,0.0,0.0,0.0
+SARDAEN,INE385C01021,Sarda Energy and Minerals Ltd.,Metals & Mining,777,2023-08-04,2026-09-30,0.0,0.0,1.0,0.0
+SCHAEFFLER,INE513A01022,Schaeffler India Ltd.,Automobile and Auto Components,1145,2022-02-09,2026-09-30,0.0,0.0,0.0,0.0
+SCHNEIDER,INE839M01018,Schneider Electric Infrastructure Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SCI,INE109A01011,Shipping Corporation of India Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+SHREECEM,INE070A01015,Shree Cement Ltd.,Construction Materials,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SHRIRAMFIN,INE721A01047,Shriram Finance Ltd.,Financial Services,425,2025-01-10,2026-09-30,0.0,0.0,1.0,0.0
+SHYAMMETL,INE810G01011,Shyam Metalics and Energy Ltd.,Capital Goods,1302,2021-06-24,2026-09-30,0.0,0.0,1.0,0.0
+ENRIN,INE1NPP01017,Siemens Energy India Ltd.,Capital Goods,318,2025-06-19,2026-09-30,0.0,0.0,0.0,0.0
+SIEMENS,INE003A01024,Siemens Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+SIGNATURE,INE903U01023,Signatureglobal (India) Ltd.,Realty,741,2023-09-27,2026-09-30,0.0,0.0,0.0,0.0
+SOBHA,INE671H01015,Sobha Ltd.,Realty,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SOLARINDS,INE343H01029,Solar Industries India Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SONACOMS,INE073K01018,Sona BLW Precision Forgings Ltd.,Automobile and Auto Components,1302,2021-06-24,2026-09-30,0.0,0.0,1.0,0.0
+STARHEALTH,INE575P01011,Star Health and Allied Insurance Company Ltd.,Financial Services,1187,2021-12-10,2026-09-30,0.0,0.0,0.0,0.0
+SBIN,INE062A01020,State Bank of India,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SAIL,INE114A01011,Steel Authority of India Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+STLTECH,INE089C01029,Sterlite Technologies Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+SUMICHEM,INE258G01013,Sumitomo Chemical India Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SUNPHARMA,INE044A01036,Sun Pharmaceutical Industries Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SUNTV,INE424H01027,Sun TV Network Ltd.,Media Entertainment & Publication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SUNDARMFIN,INE660A01013,Sundaram Finance Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SUPREMEIND,INE195A01028,Supreme Industries Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SUZLON,INE040H01021,Suzlon Energy Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SWANCORP,INE665A01038,Swan Corp Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+SWIGGY,INE00H001014,Swiggy Ltd.,Consumer Services,464,2024-11-13,2026-09-30,0.0,0.0,0.0,0.0
+SYNGENE,INE398R01022,Syngene International Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+SYRMA,INE0DYJ01015,Syrma SGS Technology Ltd.,Capital Goods,1010,2022-08-26,2026-09-30,0.0,0.0,1.0,0.0
+TBOTEK,INE673O01025,TBO Tek Ltd.,Consumer Services,589,2024-05-15,2026-09-30,0.0,0.0,1.0,0.0
+TDPOWERSYS,INE419M01035,TD Power Systems Ltd.,Capital Goods,27,2026-08-24,2026-09-30,0.0,0.0,1.0,0.0
+TVSMOTOR,INE494B01023,TVS Motor Company Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TATACAP,INE976I01016,Tata Capital Ltd.,Financial Services,239,2025-10-13,2026-09-30,0.0,0.0,0.0,0.0
+TATACHEM,INE092A01019,Tata Chemicals Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TATACOMM,INE151A01013,Tata Communications Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TCS,INE467B01029,Tata Consultancy Services Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TATACONSUM,INE192A01025,Tata Consumer Products Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TATAELXSI,INE670A01012,Tata Elxsi Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TATAINVEST,INE672A01026,Tata Investment Corporation Ltd.,Financial Services,238,2025-10-14,2026-09-30,0.0,0.0,1.0,0.0
+TMCV,INE1TAE01010,Tata Motors Ltd.,Capital Goods,219,2025-11-12,2026-09-30,0.0,0.0,1.0,0.0
+TMPV,INE155A01022,Tata Motors Passenger Vehicles Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,2.0,1.0
+TATAPOWER,INE245A01021,Tata Power Co. Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TATASTEEL,INE081A01020,Tata Steel Ltd.,Metals & Mining,1028,2022-07-29,2026-09-30,0.0,0.0,0.0,0.0
+TATATECH,INE142M01025,Tata Technologies Ltd.,Information Technology,699,2023-11-30,2026-09-30,0.0,0.0,1.0,0.0
+TTML,INE517B01013,Tata Teleservices (Maharashtra) Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TECHM,INE669C01036,Tech Mahindra Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TECHNOE,INE285K01026,Techno Electric & Engineering Company Ltd.,Construction,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TEGA,INE011K01018,Tega Industries Ltd.,Capital Goods,1186,2021-12-13,2026-09-30,0.0,0.0,1.0,0.0
+TEJASNET,INE010J01012,Tejas Networks Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TENNIND,INE19RI01016,Tenneco Clean Air India Ltd.,Automobile and Auto Components,214,2025-11-19,2026-09-30,0.0,0.0,1.0,0.0
+THANGAMAYL,INE085J01014,Thangamayil Jewellery Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+NIACL,INE470Y01017,The New India Assurance Company Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+RAMCOCEM,INE331A01037,The Ramco Cements Ltd.,Construction Materials,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+THERMAX,INE152A01029,Thermax Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TIMKEN,INE325A01013,Timken India Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TITAGARH,INE615H01020,Titagarh Rail Systems Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+TITAN,INE280A01028,Titan Company Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TORNTPHARM,INE685A01028,Torrent Pharmaceuticals Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+TORNTPOWER,INE813H01021,Torrent Power Ltd.,Power,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TARIL,INE763I01026,Transformers And Rectifiers (India) Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,1.0
+TRENT,INE849A01020,Trent Ltd.,Consumer Services,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+TRIDENT,INE064C01022,Trident Ltd.,Textiles,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TRITURBINE,INE152M01016,Triveni Turbine Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+TIINDIA,INE974X01010,Tube Investments of India Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+UCOBANK,INE691A01018,UCO Bank,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+UNOMINDA,INE405E01023,UNO Minda Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,1.0
+UPL,INE628A01036,UPL Ltd.,Chemicals,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+UTIAMC,INE094J01016,UTI Asset Management Company Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ULTRACEMCO,INE481G01011,UltraTech Cement Ltd.,Construction Materials,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+UNIONBANK,INE692A01016,Union Bank of India,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+UBL,INE686F01025,United Breweries Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+UNITDSPR,INE854D01024,United Spirits Ltd.,Fast Moving Consumer Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+URBANCO,INE0CAZ01013,Urban Company Ltd.,Consumer Services,256,2025-09-17,2026-09-30,0.0,0.0,1.0,0.0
+USHAMART,INE228A01035,Usha Martin Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+VTL,INE825A01020,Vardhman Textiles Ltd.,Textiles,1115,2022-03-25,2026-09-30,0.0,0.0,0.0,0.0
+VBL,INE200M01039,Varun Beverages Ltd.,Fast Moving Consumer Goods,507,2024-09-12,2026-09-30,0.0,0.0,1.0,0.0
+VAML,INE1CDF01017,Vedanta Aluminium Metal Ltd.,Metals & Mining,76,2026-06-15,2026-09-30,0.0,0.0,1.0,0.0
+VISL,INE1CLE01013,Vedanta Iron and Steel Ltd.,Metals & Mining,76,2026-06-15,2026-09-30,0.0,0.0,1.0,0.0
+VEDL,INE205A01025,Vedanta Ltd.,Metals & Mining,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+VOGL,INE704J01044,Vedanta Oil and Gas Ltd.,Oil Gas & Consumable Fuels,76,2026-06-15,2026-09-30,0.0,0.0,1.0,0.0
+VEDPOWER,INE694L01019,Vedanta Power Ltd.,Power,76,2026-06-15,2026-09-30,0.0,0.0,1.0,0.0
+VIJAYA,INE043W01024,Vijaya Diagnostic Centre Ltd.,Healthcare,1247,2021-09-14,2026-09-30,0.0,0.0,0.0,0.0
+VMM,INE01EA01019,Vishal Mega Mart Ltd.,Consumer Services,441,2024-12-18,2026-09-30,0.0,0.0,1.0,0.0
+IDEA,INE669E01016,Vodafone Idea Ltd.,Telecommunication,1358,2021-04-01,2026-09-30,0.0,0.0,4.0,0.0
+VOLTAS,INE226A01021,Voltas Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+WAAREEENER,INE377N01017,Waaree Energies Ltd.,Capital Goods,476,2024-10-28,2026-09-30,0.0,0.0,1.0,0.0
+WELCORP,INE191B01025,Welspun Corp Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+WELSPUNLIV,INE192B01031,Welspun Living Ltd.,Textiles,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+WHIRLPOOL,INE716A01013,Whirlpool of India Ltd.,Consumer Durables,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+WIPRO,INE075A01022,Wipro Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,0.0
+WOCKPHARMA,INE049B01025,Wockhardt Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+YESBANK,INE528G01035,Yes Bank Ltd.,Financial Services,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ZFCVINDIA,INE342J01019,ZF Commercial Vehicle Control Systems India Ltd.,Automobile and Auto Components,1358,2021-04-01,2026-09-30,0.0,0.0,1.0,1.0
+ZEEL,INE256A01028,Zee Entertainment Enterprises Ltd.,Media Entertainment & Publication,1358,2021-04-01,2026-09-30,0.0,0.0,3.0,0.0
+ZENTEC,INE251B01027,Zen Technologies Ltd.,Capital Goods,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ZENSARTECH,INE520A01027,Zensar Technolgies Ltd.,Information Technology,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,0.0
+ZYDUSLIFE,INE010B01027,Zydus Lifesciences Ltd.,Healthcare,1358,2021-04-01,2026-09-30,0.0,0.0,0.0,1.0
+ZYDUSWELL,INE768C01028,Zydus Wellness Ltd.,Fast Moving Consumer Goods,255,2025-09-18,2026-09-30,0.0,0.0,1.0,0.0
+ECLERX,INE738I01010,eClerx Services Ltd.,Services,1358,2021-04-01,2026-09-30,0.0,0.0,2.0,0.0

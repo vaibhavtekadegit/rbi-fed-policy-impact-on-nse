@@ -39,6 +39,8 @@ LABELS = ["Hawkish", "Dovish", "Neutral"]
 OUT = ROOT / "reports/final/tone"
 MODELS = ROOT / "models"
 KAPPA_MIN = 0.60
+DEVIATION = ("Author decision (Nov 13): LLM labels used although RBI dev kappa (.589, guideline v1.1) is below .60; "
+             "Sonnet 5.5 did not improve it (.577). Reported as a deviation; the classifier is judged on the eval gold set.")
 
 # ---------------------------------------------------------------- keyword dictionary (author's lexicon)
 HAWK = ["withdrawal of accommodation", "raise the target range", "increase the policy repo rate", "rate hike",
@@ -268,7 +270,9 @@ def main():
     dev = agr[(agr["partition"] == "dev")]
     print(agr.round(3).to_string(index=False))
     accepted = bool((dev["kappa"] >= KAPPA_MIN).all())
-    print(f"LLM labels {'ACCEPTED' if accepted else 'NOT accepted'} (dev kappa >= {KAPPA_MIN} overall and per bank)")
+    print(f"Kappa rule {'met' if accepted else 'NOT met'} (dev kappa >= {KAPPA_MIN} overall and per bank)")
+    if not accepted:
+        print(f"  {DEVIATION}")
 
     models = make_models()
     cv = cross_validate(models, train)
@@ -299,7 +303,8 @@ def main():
     scores, preds = tone_scores(model, sent, llm)
     scores.to_csv(ROOT / "data/interim/tone_scores.csv", index=False)
     preds.to_csv(OUT / "sentence_predictions.csv.gz", index=False, compression="gzip")
-    meta = {"selected_model": best, "llm_labels_accepted": accepted, "training_sentences": len(train),
+    meta = {"selected_model": best, "kappa_rule_met": accepted, "llm_labels_used": True,
+            "deviation": None if accepted else DEVIATION, "training_sentences": len(train),
             "python": platform.python_version(), "cpu": platform.machine(), "gpu": "none", "seed": SEED,
             "events_scored": len(scores), "tone_score_corr_llm": float(scores["tone_score"].corr(scores["tone_score_llm"]))}
     (OUT / "tone_metadata.json").write_text(json.dumps(meta, indent=2))

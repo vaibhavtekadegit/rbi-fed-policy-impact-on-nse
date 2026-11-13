@@ -26,7 +26,7 @@ helps explain or predict that reaction.
 - **RQ4:** no model reliably beats the majority class on the test period (best test AUC .546, logistic regression).
 - **Tone classifier:** TF-IDF + linear SVM, macro-F1 .785 and Cohen's kappa .685 on 200 held-out sentences labeled by the author.
 
-Full tables: `reports/final/analysis/` and `reports/final/tone/`.
+Full tables: `reports/final/analysis/`, `reports/final/tone/` and `reports/final/eda/` (EDA and data-quality log).
 
 ## Data
 
@@ -55,7 +55,7 @@ data/labels/         labeling guideline, gold labels, LLM labels
 data/db_schema.md    DuckDB schema (the database file itself is rebuilt, not committed)
 src/data/            build_database.py, db.py
 src/tone/            sentences.py, gold_sample.py, llm_label.py, classifier.py
-src/analysis/        interim_analysis.py, final_analysis.py
+src/analysis/        interim_analysis.py, final_analysis.py, eda_summary.py
 notebooks/           Colab notebooks 01-07 (run order in notebooks/README.md)
 models/              tone_clf_v1.joblib, xgb_rq4.json, xgb_rq4_features.json
 app/                 Gradio app (app.py, model.py, build_app_data.py, data/)
@@ -76,6 +76,7 @@ pip install -r requirements.txt
 python src/data/build_database.py      # DuckDB database, about 5 seconds
 python src/tone/classifier.py          # tone models and tone scores, about 10 minutes on CPU
 python src/analysis/final_analysis.py  # RQ1-RQ4 and robustness, about 5 minutes on CPU
+python src/analysis/eda_summary.py     # EDA tables, data-quality log and two figures, a few seconds
 pytest tests
 ```
 

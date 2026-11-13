@@ -14,8 +14,8 @@
     "duplicate_stock_dates": 0
   },
   "rq1_magnitude_vs_placebo": {
-    "median_abs_event": 0.514355616191142,
-    "median_abs_placebo": 0.5782704860175293,
+    "median_abs_event": 0.5143556161911422,
+    "median_abs_placebo": 0.5782704860175292,
     "mean_abs_event": 0.6871716689955844,
     "mean_abs_placebo": 0.6805932689810773,
     "mannwhitney_U": 21169.0,
@@ -25,8 +25,8 @@
     "market_mw_p_one_sided": 0.28713352014353655
   },
   "icc": {
-    "car_0_1": 0.09535642728799101,
-    "pre_event_ar_day_m5": 0.06398643598831504
+    "car_0_1": 0.09535642728799103,
+    "pre_event_ar_day_m5": 0.06398643598831502
   },
   "rq4_split": {
     "train_events": 99,
@@ -73,13 +73,13 @@
     "stocks_per_event_mean": 436.3169014084507,
     "stocks_per_event_min": 389,
     "stocks_per_event_max": 493,
-    "car_raw_mean": -0.020092269478846268,
-    "car_raw_sd": 3.125091884187881,
+    "car_raw_mean": -0.020092269478846226,
+    "car_raw_sd": 3.1250918841878708,
     "car_raw_min": -40.297046938436694,
-    "car_raw_max": 42.69009705623587,
-    "caar_sd": 0.8906359901703456,
+    "car_raw_max": 42.690097056235864,
+    "caar_sd": 0.8906359901703458,
     "share_up_mean": 0.46317516004257103,
-    "beta_median": 0.9738420973473996,
+    "beta_median": 0.9738420973473997,
     "vix_mean": 15.222235915492957,
     "largest_pos": [
       [
@@ -125,9 +125,57 @@
     }
   },
   "fed_market_level_surprise": {
-    "coef": -0.011263685160038254,
+    "coef": -0.01126368516003825,
     "p": 0.6898258487742144,
     "r2": 0.004887143159100771,
     "n": 79
+  },
+  "rq2_decisions_followup": {
+    "diff": 0.22780781260811234,
+    "boot_ci": [
+      -0.012232324846905554,
+      0.4485868732898979
+    ],
+    "welch_p": 0.05358585056023498,
+    "permutation_p": 0.055694430556944306,
+    "mannwhitney_p": 0.04807701628303543,
+    "hedges_g": 0.46269727501573804,
+    "g_ci": [
+      -0.012438953514098017,
+      0.937833503545574
+    ],
+    "interaction_coef": -0.4246697616985056,
+    "interaction_p": 0.028558505071014116,
+    "fed_coef_decisions": 0.227807812608112,
+    "fed_coef_decisions_p": 0.04927665416040539,
+    "holm_p": {
+      "All announcements": 1.0,
+      "Decisions only": 0.2143434022409396,
+      "Minutes only": 0.6347778038542896,
+      "Excluding overlapping events": 1.0
+    },
+    "loo_min": 0.19526733934372242,
+    "loo_max": 0.27419569862357585,
+    "observed_power_note": 0.4871976288579286,
+    "n_fed": 40,
+    "n_rbi": 31
+  },
+  "fed_surprise_robustness": {
+    "spearman_rho": 0.17569000378177846,
+    "spearman_p": 0.12144178342599767,
+    "trim5_slope": 0.021277703626858886,
+    "trim5_p": 0.13097095406610018,
+    "boot_slope_ci": [
+      0.006872467125539808,
+      0.04225207624186371
+    ],
+    "corr_beta_size": 0.3155505271681675
+  },
+  "effective_n": {
+    "icc_car": 0.09535642728799103,
+    "m_bar": 436.3169014084507,
+    "deff": 42.510264456388484,
+    "rows": 61957,
+    "effective_rows": 1457.4597639485878
   }
 }

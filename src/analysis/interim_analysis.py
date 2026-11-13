@@ -523,3 +523,212 @@ RESULTS["fed_market_level_surprise"] = {"coef": float(_m.params["surprise_bps"])
 with open(OUT / "results.json", "w") as f:
     json.dump(RESULTS, f, indent=2, default=lambda o: o.item() if hasattr(o, "item") else str(o))
 print(RESULTS["confusion"], RESULTS["fed_market_level_surprise"])
+
+# ------------------------------------------------------------------ 9. supplementary analyses (interim feedback)
+B_REPS = 2000
+rngb = np.random.default_rng(SEED)
+WINDOWS = {"[0,+1]": [5, 6], "[-1,+1]": [4, 5, 6], "[0,+5]": [5, 6, 7, 8, 9, 10]}
+ret_raw = R.values
+
+rows_w, rows_q = [], []
+for _, e in ev.iterrows():
+    t0 = int(e["t0"])
+    b = event_block(t0)
+    k = b["keep"]
+    for wname, idx in WINDOWS.items():
+        car = b["path"][idx][:, k].sum(0)
+        rows_w.append(pd.DataFrame({"event_id": e["event_id"], "window": wname, "car": car}))
+    raw01 = ret_raw[t0][k] + ret_raw[t0 + 1][k]
+    rows_q.append(pd.DataFrame({"event_id": e["event_id"], "size_log": b["size"][k], "beta": b["beta"][k],
+                                "car": b["car"][k], "raw01": raw01}))
+W = pd.concat(rows_w, ignore_index=True)
+for wname in WINDOWS:                                   # winsorize each window at its own 1st/99th percentile
+    m_ = W["window"] == wname
+    l_, h_ = W.loc[m_, "car"].quantile([0.01, 0.99])
+    W.loc[m_, "car"] = W.loc[m_, "car"].clip(l_, h_)
+WE = W.groupby(["event_id", "window"])["car"].mean().unstack().reset_index()
+WE = WE.merge(ev[["event_id", "bank", "event_type", "surprise_bps", "overlap_flag"]], on="event_id")
+
+
+def boot_ci(stat, groups, reps=B_REPS):
+    """Percentile bootstrap CI resampling announcements within each group (stratified)."""
+    vals = []
+    rng_ = np.random.default_rng(SEED)                  # same seed per call: identical inputs give identical CIs
+    for _ in range(reps):
+        sample = [g[rng_.integers(0, len(g), len(g))] for g in groups]
+        vals.append(stat(*sample))
+    return np.nanpercentile(vals, [2.5, 97.5])
+
+
+# 9a. Robustness: alternative windows and overlap removal
+rob = []
+for wname in WINDOWS:
+    for lab, mask in [("All announcements", WE["bank"].notna()), ("RBI", WE["bank"] == "RBI"), ("Fed", WE["bank"] == "FED")]:
+        for ov_lab, ov in [("all", WE["bank"].notna()), ("no overlap", WE["overlap_flag"] == 0)]:
+            x = WE.loc[mask & ov, wname].dropna().values
+            t_, p_ = stats.ttest_1samp(x, 0)
+            rob.append({"test": "RQ1 mean CAAR", "window": wname, "sample": ov_lab, "group": lab, "n": len(x),
+                        "estimate": x.mean(), "ci_low": boot_ci(np.mean, [x])[0], "ci_high": boot_ci(np.mean, [x])[1], "p": p_})
+    for ov_lab, ov in [("all", WE["bank"].notna()), ("no overlap", WE["overlap_flag"] == 0)]:
+        d_ = WE[ov & (WE["event_type"] == "DEC")]
+        a = d_.loc[d_["bank"] == "FED", wname].abs().values
+        r_ = d_.loc[d_["bank"] == "RBI", wname].abs().values
+        t_, p_ = stats.ttest_ind(a, r_, equal_var=False)
+        ci = boot_ci(lambda x, y: x.mean() - y.mean(), [a, r_])
+        rob.append({"test": "RQ2 decisions |CAAR| Fed − RBI", "window": wname, "sample": ov_lab, "group": "Decisions",
+                    "n": len(a) + len(r_), "estimate": a.mean() - r_.mean(), "ci_low": ci[0], "ci_high": ci[1], "p": p_})
+        f_ = WE[ov & (WE["bank"] == "FED") & WE["surprise_bps"].notna()]
+        m_ = sm.OLS(f_[wname], sm.add_constant(f_[["surprise_bps"]])).fit(cov_type="HC1")
+        ci = m_.conf_int().loc["surprise_bps"].values
+        rob.append({"test": "RQ3 Fed surprise slope (pp per bp)", "window": wname, "sample": ov_lab, "group": "Fed",
+                    "n": int(m_.nobs), "estimate": m_.params["surprise_bps"], "ci_low": ci[0], "ci_high": ci[1],
+                    "p": m_.pvalues["surprise_bps"]})
+rob = pd.DataFrame(rob)
+rob.to_csv(OUT / "robustness_windows_overlap.csv", index=False)
+
+# 9b. RQ2 borderline difference: interaction model, permutation, Holm, Hedges g with CI
+ev2 = ev.assign(is_fed=(ev["bank"] == "FED").astype(int), is_min=(ev["event_type"] == "MIN").astype(int))
+im = sm.OLS(ev2["abs_caar"], sm.add_constant(ev2[["is_fed", "is_min"]].assign(fed_x_min=ev2["is_fed"] * ev2["is_min"]))).fit(cov_type="HC1")
+dec = ev2[ev2["is_min"] == 0]
+a, r_ = dec.loc[dec["is_fed"] == 1, "abs_caar"].values, dec.loc[dec["is_fed"] == 0, "abs_caar"].values
+obs = a.mean() - r_.mean()
+pool = np.concatenate([a, r_])
+perm = []
+for _ in range(10000):
+    s_ = rngb.permutation(pool)
+    perm.append(s_[:len(a)].mean() - s_[len(a):].mean())
+perm_p = (np.sum(np.abs(perm) >= abs(obs)) + 1) / (len(perm) + 1)
+n1, n2 = len(a), len(r_)
+sp = np.sqrt(((n1 - 1) * a.var(ddof=1) + (n2 - 1) * r_.var(ddof=1)) / (n1 + n2 - 2))
+d_ = obs / sp
+g_ = d_ * (1 - 3 / (4 * (n1 + n2) - 9))
+se_g = np.sqrt((n1 + n2) / (n1 * n2) + g_ ** 2 / (2 * (n1 + n2)))
+diff_ci = boot_ci(lambda x, y: x.mean() - y.mean(), [a, r_])
+mw_ = stats.mannwhitneyu(a, r_, alternative="two-sided")
+rq2p = pd.read_csv(OUT / "rq2_tests.csv")["p"].values[:4]
+order = np.argsort(rq2p)
+holm = np.empty(4)
+running = 0
+for rank, i in enumerate(order):
+    running = max(running, min(1, (4 - rank) * rq2p[i]))
+    holm[i] = running
+# leave-one-out: largest single influence on the decision-day difference
+loo = [np.delete(a, i).mean() - r_.mean() for i in range(n1)] + [a.mean() - np.delete(r_, j).mean() for j in range(n2)]
+power_obs = sm.stats.TTestIndPower().power(effect_size=abs(d_), nobs1=n1, ratio=n2 / n1, alpha=0.05)
+RESULTS["rq2_decisions_followup"] = {
+    "diff": obs, "boot_ci": list(diff_ci), "welch_p": float(stats.ttest_ind(a, r_, equal_var=False).pvalue),
+    "permutation_p": float(perm_p), "mannwhitney_p": float(mw_.pvalue), "hedges_g": g_,
+    "g_ci": [g_ - 1.96 * se_g, g_ + 1.96 * se_g], "interaction_coef": im.params["fed_x_min"],
+    "interaction_p": im.pvalues["fed_x_min"], "fed_coef_decisions": im.params["is_fed"],
+    "fed_coef_decisions_p": im.pvalues["is_fed"], "holm_p": dict(zip(pd.read_csv(OUT / "rq2_tests.csv")["comparison"][:4], holm)),
+    "loo_min": min(loo), "loo_max": max(loo), "observed_power_note": power_obs,
+    "n_fed": n1, "n_rbi": n2}
+
+# 9c. Fed surprise: stock-level vs market-level; size quintiles; raw-return decomposition
+Q = pd.concat(rows_q, ignore_index=True).merge(ev[["event_id", "bank", "surprise_bps", "mkt_car"]], on="event_id")
+Q["car"] = Q["car"].clip(lo, hi)
+Q["size_q"] = Q.groupby("event_id")["size_log"].transform(lambda s: pd.qcut(s.rank(method="first"), 5, labels=False) + 1)
+QF = Q[(Q["bank"] == "FED") & Q["surprise_bps"].notna()]
+qrows = []
+for q in range(1, 6):
+    g = QF[QF["size_q"] == q].groupby("event_id").agg(car=("car", "mean"), raw=("raw01", "mean"), surprise=("surprise_bps", "first"))
+    for col, lab in [("car", "Abnormal (market model)"), ("raw", "Raw return")]:
+        m_ = sm.OLS(g[col], sm.add_constant(g[["surprise"]])).fit(cov_type="HC1")
+        ci = m_.conf_int().loc["surprise"].values
+        qrows.append({"measure": lab, "size_quintile": q, "slope": m_.params["surprise"], "ci_low": ci[0],
+                      "ci_high": ci[1], "p": m_.pvalues["surprise"], "n": int(m_.nobs)})
+# market and equal-weighted raw returns [0,+1]
+mk = ev[(ev["bank"] == "FED") & ev["surprise_bps"].notna()].copy()
+mk["nifty_raw01"] = [Mv[int(t)] + Mv[int(t) + 1] for t in mk["t0"]]
+ew = QF.groupby("event_id")["raw01"].mean().rename("ew_raw01")
+mk = mk.merge(ew, left_on="event_id", right_index=True)
+for col, lab in [("nifty_raw01", "NIFTY 50 raw return"), ("ew_raw01", "Equal-weighted NIFTY 500 raw return"),
+                 ("mkt_car", "NIFTY 50 abnormal (constant mean)"), ("caar", "Stock CAAR (market model)")]:
+    m_ = sm.OLS(mk[col], sm.add_constant(mk[["surprise_bps"]])).fit(cov_type="HC1")
+    ci = m_.conf_int().loc["surprise_bps"].values
+    qrows.append({"measure": lab, "size_quintile": "All", "slope": m_.params["surprise_bps"], "ci_low": ci[0],
+                  "ci_high": ci[1], "p": m_.pvalues["surprise_bps"], "n": int(m_.nobs)})
+qtab = pd.DataFrame(qrows)
+qtab.to_csv(OUT / "fed_surprise_decomposition.csv", index=False)
+# robustness of the Fed slope: Spearman, drop 5 largest |surprise|, bootstrap CI, statements only
+fs = mk[["surprise_bps", "caar"]].dropna()
+sp_r, sp_p = stats.spearmanr(fs["surprise_bps"], fs["caar"])
+trim = fs.loc[fs["surprise_bps"].abs().sort_values().index[:-5]]
+mt = sm.OLS(trim["caar"], sm.add_constant(trim[["surprise_bps"]])).fit(cov_type="HC1")
+bs = []
+X_ = fs.values
+for _ in range(B_REPS):
+    s_ = X_[rngb.integers(0, len(X_), len(X_))]
+    bs.append(np.polyfit(s_[:, 0], s_[:, 1], 1)[0])
+RESULTS["fed_surprise_robustness"] = {
+    "spearman_rho": sp_r, "spearman_p": sp_p, "trim5_slope": mt.params["surprise_bps"], "trim5_p": mt.pvalues["surprise_bps"],
+    "boot_slope_ci": list(np.percentile(bs, [2.5, 97.5])), "corr_beta_size": float(Q[["beta", "size_log"]].corr().iloc[0, 1])}
+
+# figure: slope by size quintile
+fig, ax = plt.subplots(figsize=(5.5, 3.2))
+qq = qtab[qtab["size_quintile"] != "All"]
+for lab, col, off in [("Abnormal (market model)", C_FED, -0.12), ("Raw return", "grey", 0.12)]:
+    d__ = qq[qq["measure"] == lab]
+    x_ = d__["size_quintile"].astype(int) + off
+    ax.errorbar(x_, d__["slope"], yerr=[d__["slope"] - d__["ci_low"], d__["ci_high"] - d__["slope"]],
+                fmt="o", color=col, capsize=3, label=lab)
+nifty_s = qtab.loc[qtab["measure"] == "NIFTY 50 raw return", "slope"].iloc[0]
+ax.axhline(nifty_s, color="black", ls="--", lw=0.8, label="NIFTY 50 raw return")
+ax.axhline(0, color="grey", lw=0.5)
+ax.set_xticks(range(1, 6), ["Q1\nsmallest", "Q2", "Q3", "Q4", "Q5\nlargest"])
+ax.set_ylabel("Slope on Fed surprise, pp per bp"); ax.legend(frameon=False, fontsize=8)
+save(fig, "fig_surprise_by_size.png")
+
+# 9d. Uncertainty: CIs on principal results; RQ4 bootstrap CIs; MDE and effective N
+r1 = pd.read_csv(OUT / "rq1_tests.csv")
+pw = sm.stats.TTestPower()
+mde = []
+for lab, n_ in [("All announcements", 142), ("One bank: Fed", 80), ("One bank: RBI", 62),
+                ("One bank and type (Fed)", 40), ("One bank and type (RBI)", 31)]:
+    d_mde = pw.solve_power(nobs=n_, alpha=0.05, power=0.8)
+    mde.append({"group": lab, "K": n_, "mde_d": d_mde, "mde_pp": d_mde * ev["caar"].std()})
+for lab, n1_, n2_ in [("Fed vs. RBI, all", 80, 62), ("Fed vs. RBI, decisions", 40, 31)]:
+    d_mde = sm.stats.TTestIndPower().solve_power(nobs1=n1_, ratio=n2_ / n1_, alpha=0.05, power=0.8)
+    mde.append({"group": lab, "K": n1_ + n2_, "mde_d": d_mde, "mde_pp": d_mde * ev["abs_caar"].std()})
+mde = pd.DataFrame(mde)
+mde.to_csv(OUT / "mde_by_group.csv", index=False)
+icc_car = RESULTS["icc"]["car_0_1"]
+m_bar = ev["n_stocks"].mean()
+RESULTS["effective_n"] = {"icc_car": icc_car, "m_bar": m_bar, "deff": 1 + (m_bar - 1) * icc_car,
+                          "rows": len(se), "effective_rows": len(se) / (1 + (m_bar - 1) * icc_car)}
+
+boot4 = []
+ids = te["event_id"].values
+uniq = np.unique(ids)
+preds = {"Majority class": p_maj, "Logistic regression": p_log, "XGBoost": p_xgb}
+idx_by = {u: np.where(ids == u)[0] for u in uniq}
+for name, p_ in preds.items():
+    acc, auc = [], []
+    for _ in range(1000):
+        s_ = rngb.choice(uniq, len(uniq), replace=True)
+        ii = np.concatenate([idx_by[u] for u in s_])
+        acc.append(accuracy_score(yte[ii], (p_[ii] >= .5).astype(int)))
+        auc.append(roc_auc_score(yte[ii], p_[ii]) if len(np.unique(p_[ii])) > 1 else 0.5)
+    boot4.append({"model": name, "acc_ci_low": np.percentile(acc, 2.5), "acc_ci_high": np.percentile(acc, 97.5),
+                  "auc_ci_low": np.percentile(auc, 2.5), "auc_ci_high": np.percentile(auc, 97.5)})
+pd.DataFrame(boot4).to_csv(OUT / "rq4_bootstrap_ci.csv", index=False)
+
+# bootstrap CIs for RQ1 group means and RQ3 main slopes (event-level)
+ci_rows = []
+for lab, x in [("All", ev["caar"]), ("RBI", ev.loc[Rb, "caar"]), ("Fed", ev.loc[F, "caar"])]:
+    c_ = boot_ci(np.mean, [x.dropna().values])
+    ci_rows.append({"result": f"RQ1 mean CAAR, {lab}", "estimate": x.mean(), "ci_low": c_[0], "ci_high": c_[1]})
+c_ = boot_ci(lambda x, y: x.mean() - y.mean(), [ev.loc[F, "abs_caar"].values, ev.loc[Rb, "abs_caar"].values])
+ci_rows.append({"result": "RQ2 mean |CAAR| Fed − RBI, all", "estimate": ev.loc[F, "abs_caar"].mean() - ev.loc[Rb, "abs_caar"].mean(),
+                "ci_low": c_[0], "ci_high": c_[1]})
+ci_rows.append({"result": "RQ2 mean |CAAR| Fed − RBI, decisions", "estimate": obs, "ci_low": diff_ci[0], "ci_high": diff_ci[1]})
+ci_rows.append({"result": "RQ3 Fed surprise slope, all (pp per bp)", "estimate": float(np.polyfit(fs["surprise_bps"], fs["caar"], 1)[0]),
+                "ci_low": np.percentile(bs, 2.5), "ci_high": np.percentile(bs, 97.5)})
+pd.DataFrame(ci_rows).to_csv(OUT / "bootstrap_ci_principal.csv", index=False)
+
+with open(OUT / "results.json", "w") as f:
+    json.dump(RESULTS, f, indent=2, default=lambda o: o.item() if hasattr(o, "item") else str(o))
+print(rob.round(4).to_string(index=False))
+print(json.dumps({k: RESULTS[k] for k in ["rq2_decisions_followup", "fed_surprise_robustness", "effective_n"]}, indent=1, default=float))
+print(qtab.round(4).to_string(index=False)); print(mde.round(3).to_string(index=False))
+print(pd.DataFrame(boot4).round(3).to_string(index=False)); print(pd.DataFrame(ci_rows).round(4).to_string(index=False))

@@ -1,0 +1,41 @@
+{
+  "last_price_date": "2026-09-30",
+  "vix_last": 13.49,
+  "nifty_pre5_last": -3.5603339510060117,
+  "n_stocks_latest": 493,
+  "first_test_event": "FED_DEC_2025-03-19",
+  "test_metrics": {
+    "Majority class": {
+      "accuracy": 0.503,
+      "roc_auc": 0.5,
+      "auc_ci": [
+        0.5,
+        0.5
+      ]
+    },
+    "Logistic regression": {
+      "accuracy": 0.529,
+      "roc_auc": 0.545,
+      "auc_ci": [
+        0.503,
+        0.584
+      ]
+    },
+    "XGBoost": {
+      "accuracy": 0.516,
+      "roc_auc": 0.532,
+      "auc_ci": [
+        0.492,
+        0.574
+      ]
+    },
+    "Neural network (MLP)": {
+      "accuracy": 0.507,
+      "roc_auc": 0.515,
+      "auc_ci": [
+        0.475,
+        0.561
+      ]
+    }
+  }
+}

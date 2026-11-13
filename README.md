@@ -58,6 +58,7 @@ src/tone/            sentences.py, gold_sample.py, llm_label.py, classifier.py
 src/analysis/        interim_analysis.py, final_analysis.py
 notebooks/           Colab notebooks 01-07 (run order in notebooks/README.md)
 models/              tone_clf_v1.joblib, xgb_rq4.json, xgb_rq4_features.json
+app/                 Gradio app (app.py, model.py, build_app_data.py, data/)
 reports/interim/     interim report outputs
 reports/final/       final tone and analysis outputs (tables, figures, results.json, run_log.txt)
 docs/                architecture diagram and its source
@@ -98,8 +99,18 @@ versions are recorded in `reports/final/analysis/results.json`.
 
 ## Deployment
 
-A Gradio app on Hugging Face Spaces will let users enter an announcement's details and see the predicted share of
-stocks rising, using `models/xgb_rq4.json` and the tone model. Link to be added.
+A Gradio app in `app/` runs on Hugging Face Spaces (link to be added). It has three tabs:
+
+- **Try a scenario:** enter an RBI or Fed announcement (bank, type, Fed 2-year yield surprise or RBI rate change,
+  India VIX, recent NIFTY 50 return) and optionally paste the policy text. The app scores the tone with
+  `models/tone_clf_v1.joblib` and gives each stock's probability of a positive CAR[0,+1] with `models/xgb_rq4.json`,
+  by sector and for the most and least likely stocks.
+- **Past announcements:** replay any of the 142 announcements and compare predicted and actual share of stocks up.
+- **About the model:** data, test metrics and limitations.
+
+Run locally: `pip install -r app/requirements.txt` then `python app/app.py`. `tests/test_app.py` checks that the app
+reproduces the reported XGBoost test metrics (accuracy .516, ROC-AUC .532). Rebuild `app/data/` after a new analysis
+run with `python app/build_app_data.py`.
 
 ## License and use
 

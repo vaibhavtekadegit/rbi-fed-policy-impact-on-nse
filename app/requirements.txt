@@ -1,0 +1,6 @@
+gradio==6.32.0
+scikit-learn==1.6.1
+xgboost==3.4.1
+pandas>=2.2
+numpy>=1.26
+joblib>=1.3

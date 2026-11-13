@@ -14,8 +14,8 @@
   "duplicate_stock_dates": 0
  },
  "rq1_magnitude_vs_placebo": {
-  "median_abs_event": 0.514355616191142,
-  "median_abs_placebo": 0.5782704860175293,
+  "median_abs_event": 0.5143556161911422,
+  "median_abs_placebo": 0.5782704860175292,
   "mean_abs_event": 0.6871716689955844,
   "mean_abs_placebo": 0.6805932689810773,
   "mannwhitney_U": 21169.0,
@@ -25,8 +25,8 @@
   "market_mw_p_one_sided": 0.28713352014353655
  },
  "icc": {
-  "car_0_1": 0.09535642728799101,
-  "pre_event_ar_day_m5": 0.06398643598831504
+  "car_0_1": 0.09535642728799103,
+  "pre_event_ar_day_m5": 0.06398643598831502
  },
  "rq4_split": {
   "train_events": 99,
@@ -73,13 +73,13 @@
   "stocks_per_event_mean": 436.3169014084507,
   "stocks_per_event_min": 389,
   "stocks_per_event_max": 493,
-  "car_raw_mean": -0.020092269478846268,
-  "car_raw_sd": 3.125091884187881,
+  "car_raw_mean": -0.020092269478846226,
+  "car_raw_sd": 3.1250918841878708,
   "car_raw_min": -40.297046938436694,
-  "car_raw_max": 42.69009705623587,
-  "caar_sd": 0.8906359901703456,
+  "car_raw_max": 42.690097056235864,
+  "caar_sd": 0.8906359901703458,
   "share_up_mean": 0.46317516004257103,
-  "beta_median": 0.9738420973473996,
+  "beta_median": 0.9738420973473997,
   "vix_mean": 15.222235915492957,
   "largest_pos": [
    [
@@ -174,4 +174,119 @@ Fast Moving Consumer Goods        -0.044 -0.088
 Media Entertainment & Publication -0.054 -0.062
 Healthcare                         0.052 -0.034
 Consumer Durables                  0.015  0.041
-{'xgboost': {'TP': 2896, 'TN': 7385, 'FP': 2814, 'FN': 7201}, 'logistic': {'TP': 1317, 'TN': 9229, 'FP': 970, 'FN': 8780}} {'coef': -0.011263685160038254, 'p': 0.6898258487742144, 'r2': 0.004887143159100771, 'n': 79}
+{'xgboost': {'TP': 2896, 'TN': 7385, 'FP': 2814, 'FN': 7201}, 'logistic': {'TP': 1317, 'TN': 9229, 'FP': 970, 'FN': 8780}} {'coef': -0.01126368516003825, 'p': 0.6898258487742144, 'r2': 0.004887143159100771, 'n': 79}
+                              test  window     sample             group   n  estimate  ci_low  ci_high      p
+                     RQ1 mean CAAR  [0,+1]        all All announcements 142   -0.0414 -0.1893   0.0982 0.5805
+                     RQ1 mean CAAR  [0,+1] no overlap All announcements 115   -0.0937 -0.2643   0.0792 0.2790
+                     RQ1 mean CAAR  [0,+1]        all               RBI  62   -0.1616 -0.3927   0.0490 0.1673
+                     RQ1 mean CAAR  [0,+1] no overlap               RBI  52   -0.2450 -0.4995   0.0003 0.0627
+                     RQ1 mean CAAR  [0,+1]        all               Fed  80    0.0517 -0.1425   0.2336 0.5960
+                     RQ1 mean CAAR  [0,+1] no overlap               Fed  63    0.0312 -0.1967   0.2533 0.7864
+    RQ2 decisions |CAAR| Fed − RBI  [0,+1]        all         Decisions  71    0.2278 -0.0122   0.4486 0.0536
+RQ3 Fed surprise slope (pp per bp)  [0,+1]        all               Fed  79    0.0264  0.0101   0.0427 0.0015
+    RQ2 decisions |CAAR| Fed − RBI  [0,+1] no overlap         Decisions  63    0.2589  0.0159   0.4812 0.0418
+RQ3 Fed surprise slope (pp per bp)  [0,+1] no overlap               Fed  63    0.0301  0.0086   0.0516 0.0061
+                     RQ1 mean CAAR [-1,+1]        all All announcements 142    0.0654 -0.1242   0.2538 0.4996
+                     RQ1 mean CAAR [-1,+1] no overlap All announcements 115    0.0111 -0.2130   0.2388 0.9204
+                     RQ1 mean CAAR [-1,+1]        all               RBI  62   -0.0945 -0.3645   0.1668 0.5091
+                     RQ1 mean CAAR [-1,+1] no overlap               RBI  52   -0.1744 -0.4935   0.1162 0.2747
+                     RQ1 mean CAAR [-1,+1]        all               Fed  80    0.1894 -0.0602   0.4375 0.1508
+                     RQ1 mean CAAR [-1,+1] no overlap               Fed  63    0.1643 -0.1464   0.4693 0.2912
+    RQ2 decisions |CAAR| Fed − RBI [-1,+1]        all         Decisions  71    0.2989  0.0003   0.5979 0.0605
+RQ3 Fed surprise slope (pp per bp) [-1,+1]        all               Fed  79    0.0217  0.0022   0.0411 0.0288
+    RQ2 decisions |CAAR| Fed − RBI [-1,+1] no overlap         Decisions  63    0.3762  0.0784   0.6718 0.0254
+RQ3 Fed surprise slope (pp per bp) [-1,+1] no overlap               Fed  63    0.0278  0.0004   0.0552 0.0464
+                     RQ1 mean CAAR  [0,+5]        all All announcements 142   -0.0328 -0.3020   0.2324 0.8171
+                     RQ1 mean CAAR  [0,+5] no overlap All announcements 115   -0.0206 -0.2992   0.2619 0.8873
+                     RQ1 mean CAAR  [0,+5]        all               RBI  62   -0.1109 -0.5279   0.3071 0.6077
+                     RQ1 mean CAAR  [0,+5] no overlap               RBI  52   -0.1498 -0.5742   0.2873 0.4941
+                     RQ1 mean CAAR  [0,+5]        all               Fed  80    0.0278 -0.3464   0.3849 0.8831
+                     RQ1 mean CAAR  [0,+5] no overlap               Fed  63    0.0860 -0.2955   0.4595 0.6615
+    RQ2 decisions |CAAR| Fed − RBI  [0,+5]        all         Decisions  71   -0.1073 -0.6172   0.4211 0.7002
+RQ3 Fed surprise slope (pp per bp)  [0,+5]        all               Fed  79    0.0466  0.0115   0.0817 0.0093
+    RQ2 decisions |CAAR| Fed − RBI  [0,+5] no overlap         Decisions  63    0.0223 -0.4837   0.4822 0.9312
+RQ3 Fed surprise slope (pp per bp)  [0,+5] no overlap               Fed  63    0.0418 -0.0022   0.0859 0.0627
+{
+ "rq2_decisions_followup": {
+  "diff": 0.22780781260811234,
+  "boot_ci": [
+   -0.012232324846905554,
+   0.4485868732898979
+  ],
+  "welch_p": 0.05358585056023498,
+  "permutation_p": 0.055694430556944306,
+  "mannwhitney_p": 0.04807701628303543,
+  "hedges_g": 0.46269727501573804,
+  "g_ci": [
+   -0.012438953514098017,
+   0.937833503545574
+  ],
+  "interaction_coef": -0.4246697616985056,
+  "interaction_p": 0.028558505071014116,
+  "fed_coef_decisions": 0.227807812608112,
+  "fed_coef_decisions_p": 0.04927665416040539,
+  "holm_p": {
+   "All announcements": 1.0,
+   "Decisions only": 0.2143434022409396,
+   "Minutes only": 0.6347778038542896,
+   "Excluding overlapping events": 1.0
+  },
+  "loo_min": 0.19526733934372242,
+  "loo_max": 0.27419569862357585,
+  "observed_power_note": 0.4871976288579286,
+  "n_fed": 40,
+  "n_rbi": 31
+ },
+ "fed_surprise_robustness": {
+  "spearman_rho": 0.17569000378177846,
+  "spearman_p": 0.12144178342599767,
+  "trim5_slope": 0.021277703626858886,
+  "trim5_p": 0.13097095406610018,
+  "boot_slope_ci": [
+   0.006872467125539808,
+   0.04225207624186371
+  ],
+  "corr_beta_size": 0.3155505271681675
+ },
+ "effective_n": {
+  "icc_car": 0.09535642728799103,
+  "m_bar": 436.3169014084507,
+  "deff": 42.510264456388484,
+  "rows": 61957,
+  "effective_rows": 1457.4597639485878
+ }
+}
+                            measure size_quintile   slope  ci_low  ci_high      p  n
+            Abnormal (market model)             1  0.0361  0.0167   0.0554 0.0003 79
+                         Raw return             1  0.0324 -0.0264   0.0913 0.2796 79
+            Abnormal (market model)             2  0.0404  0.0230   0.0578 0.0000 79
+                         Raw return             2  0.0350 -0.0245   0.0944 0.2488 79
+            Abnormal (market model)             3  0.0290  0.0107   0.0472 0.0019 79
+                         Raw return             3  0.0200 -0.0450   0.0850 0.5461 79
+            Abnormal (market model)             4  0.0127 -0.0070   0.0324 0.2062 79
+                         Raw return             4  0.0019 -0.0647   0.0685 0.9560 79
+            Abnormal (market model)             5  0.0138 -0.0007   0.0284 0.0617 79
+                         Raw return             5  0.0025 -0.0649   0.0699 0.9413 79
+                NIFTY 50 raw return           All -0.0118 -0.0665   0.0429 0.6721 79
+Equal-weighted NIFTY 500 raw return           All  0.0184 -0.0446   0.0813 0.5673 79
+  NIFTY 50 abnormal (constant mean)           All -0.0113 -0.0666   0.0441 0.6898 79
+          Stock CAAR (market model)           All  0.0264  0.0101   0.0427 0.0015 79
+                  group   K  mde_d  mde_pp
+      All announcements 142  0.237   0.211
+          One bank: Fed  80  0.317   0.282
+          One bank: RBI  62  0.362   0.322
+One bank and type (Fed)  40  0.454   0.405
+One bank and type (RBI)  31  0.520   0.463
+       Fed vs. RBI, all 142  0.477   0.270
+ Fed vs. RBI, decisions  71  0.680   0.384
+              model  acc_ci_low  acc_ci_high  auc_ci_low  auc_ci_high
+     Majority class       0.458        0.546       0.500        0.500
+Logistic regression       0.480        0.561       0.477        0.564
+            XGBoost       0.472        0.542       0.452        0.549
+                                 result  estimate  ci_low  ci_high
+                     RQ1 mean CAAR, All   -0.0414 -0.1880   0.1000
+                     RQ1 mean CAAR, RBI   -0.1616 -0.3835   0.0589
+                     RQ1 mean CAAR, Fed    0.0517 -0.1445   0.2330
+         RQ2 mean |CAAR| Fed − RBI, all    0.0155 -0.1743   0.2055
+   RQ2 mean |CAAR| Fed − RBI, decisions    0.2278 -0.0122   0.4486
+RQ3 Fed surprise slope, all (pp per bp)    0.0264  0.0069   0.0423

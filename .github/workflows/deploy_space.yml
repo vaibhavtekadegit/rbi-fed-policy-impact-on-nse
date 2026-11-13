@@ -1,0 +1,52 @@
+# Test the Gradio app and deploy it to the Hugging Face Space.
+# Runs on every push to main that changes the app or the models, and on demand (Actions tab, "Run workflow").
+# Needs one repository secret: HF_TOKEN (Hugging Face access token with write permission).
+
+name: Deploy app to Hugging Face Space
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "models/**"
+      - "tests/test_app.py"
+      - ".github/workflows/deploy_space.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-space
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: app/requirements.txt
+      - name: Install app requirements
+        run: pip install -r app/requirements.txt pytest
+      - name: Test that the app reproduces the reported test metrics
+        run: pytest -q tests/test_app.py
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: huggingface
+      url: https://huggingface.co/spaces/Vaibhavtekade/rbi-fed-nse-app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Hugging Face client
+        run: pip install "huggingface_hub>=0.25"
+      - name: Upload app to the Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python app/deploy_space.py

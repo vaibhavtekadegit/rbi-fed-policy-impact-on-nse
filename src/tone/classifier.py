@@ -305,7 +305,7 @@ def main():
     preds.to_csv(OUT / "sentence_predictions.csv.gz", index=False, compression="gzip")
     meta = {"selected_model": best, "kappa_rule_met": accepted, "llm_labels_used": True,
             "deviation": None if accepted else DEVIATION, "training_sentences": len(train),
-            "python": platform.python_version(), "cpu": platform.machine(), "gpu": "none", "seed": SEED,
+            "python": platform.python_version(), "cpu": platform.machine(), "gpu": (__import__("torch").cuda.get_device_name(0) if __import__("importlib").util.find_spec("torch") and __import__("torch").cuda.is_available() else "none"), "seed": SEED,
             "events_scored": len(scores), "tone_score_corr_llm": float(scores["tone_score"].corr(scores["tone_score_llm"]))}
     (OUT / "tone_metadata.json").write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2))

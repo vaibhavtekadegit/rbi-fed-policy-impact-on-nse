@@ -1,0 +1,121 @@
+
+== RQ1
+                   group  K_events  caar_pp  ci_low  ci_high    p_t  bmp_kp_z  p_bmp_kp  p_clustered
+       All announcements       142  -0.0414 -0.1892   0.1064 0.5805   -0.4881    0.6255       0.6530
+                RBI: all        62  -0.1616 -0.3928   0.0696 0.1673   -1.4992    0.1338       0.1752
+          RBI: decisions        31  -0.0487 -0.3177   0.2204 0.7145   -0.3980    0.6906       0.7266
+            RBI: minutes        31  -0.2745 -0.6628   0.1138 0.1592   -1.7221    0.0850       0.1569
+                Fed: all        80   0.0517 -0.1417   0.2452 0.5960    0.6695    0.5032       0.5316
+          Fed: decisions        40  -0.0394 -0.3372   0.2584 0.7905   -0.0270    0.9785       0.8523
+            Fed: minutes        40   0.1429 -0.1144   0.4001 0.2682    0.9738    0.3302       0.2446
+      Placebo days (300)       300  -0.0207     NaN      NaN 0.6999       NaN       NaN          NaN
+    Market NIFTY 50: all       142   0.0026     NaN      NaN 0.9804       NaN       NaN          NaN
+Market NIFTY 50: placebo       300  -0.1077     NaN      NaN 0.1206       NaN       NaN          NaN
+
+== RQ2
+                  comparison    diff  boot_ci_low  boot_ci_high  p_welch  p_permutation  p_holm  hedges_g
+           All announcements  0.0155      -0.1743        0.2055   0.8750         0.8725  1.0000    0.0271
+                   Decisions  0.2278      -0.0122        0.4486   0.0536         0.0557  0.2143    0.4627
+                     Minutes -0.1969      -0.5075        0.0819   0.2116         0.1928  0.6348   -0.3108
+Excluding overlapping events -0.0175      -0.2911        0.2570   0.9015         0.8979  1.0000   -0.0277
+
+== RQ3
+                                model            term    coef      p     n     r2
+         Reduced (policy information)          is_fed  0.2313 0.1297   141 0.0595
+         Reduced (policy information)          is_min -0.0282 0.8523   141 0.0595
+         Reduced (policy information)    fed_surprise  0.0262 0.0031   141 0.0595
+         Reduced (policy information) rbi_rate_change  0.0023 0.5921   141 0.0595
+         Reduced (policy information)          vix_m1  0.0217 0.2991   141 0.0595
+     Full (policy information + tone)          is_fed  0.2830 0.1455   141 0.0658
+     Full (policy information + tone)          is_min -0.0788 0.6381   141 0.0658
+     Full (policy information + tone)    fed_surprise  0.0243 0.0072   141 0.0658
+     Full (policy information + tone) rbi_rate_change  0.0050 0.4024   141 0.0658
+     Full (policy information + tone)          vix_m1  0.0261 0.2333   141 0.0658
+     Full (policy information + tone)      tone_score -0.4105 0.5212   141 0.0658
+     Full (policy information + tone)      tone_x_fed  0.0331 0.9679   141 0.0658
+            Fed only: surprise + tone          is_min  0.1745 0.4717    79 0.0765
+            Fed only: surprise + tone    fed_surprise  0.0264 0.0029    79 0.0765
+            Fed only: surprise + tone      tone_score  0.2049 0.7481    79 0.0765
+            Fed only: surprise + tone          vix_m1 -0.0215 0.4301    79 0.0765
+         RBI only: rate change + tone          is_min -0.2305 0.3236    62 0.1077
+         RBI only: rate change + tone rbi_rate_change  0.0029 0.6669    62 0.1077
+         RBI only: rate change + tone      tone_score -0.5316 0.4218    62 0.1077
+         RBI only: rate change + tone          vix_m1  0.0678 0.0073    62 0.1077
+           Full, tone from LLM labels          is_fed  0.2627 0.1508   141 0.0646
+           Full, tone from LLM labels          is_min -0.0632 0.6956   141 0.0646
+           Full, tone from LLM labels    fed_surprise  0.0247 0.0069   141 0.0646
+           Full, tone from LLM labels rbi_rate_change  0.0050 0.3857   141 0.0646
+           Full, tone from LLM labels          vix_m1  0.0255 0.2424   141 0.0646
+           Full, tone from LLM labels        tone_llm -0.4077 0.5302   141 0.0646
+           Full, tone from LLM labels  tone_llm_x_fed  0.1102 0.8904   141 0.0646
+    Full, market level (NIFTY 50 CAR)          is_fed -0.1170 0.6205   141 0.0643
+    Full, market level (NIFTY 50 CAR)          is_min -0.0628 0.7806   141 0.0643
+    Full, market level (NIFTY 50 CAR)    fed_surprise -0.0156 0.5743   141 0.0643
+    Full, market level (NIFTY 50 CAR) rbi_rate_change -0.0073 0.4151   141 0.0643
+    Full, market level (NIFTY 50 CAR)          vix_m1  0.0811 0.0217   141 0.0643
+    Full, market level (NIFTY 50 CAR)      tone_score -0.4131 0.5324   141 0.0643
+    Full, market level (NIFTY 50 CAR)      tone_x_fed -0.1015 0.9223   141 0.0643
+Full, stock level (two-way clustered)          is_fed  0.2890 0.1218 61568 0.0073
+Full, stock level (two-way clustered)          is_min -0.0782 0.6277 61568 0.0073
+Full, stock level (two-way clustered)    fed_surprise  0.0242 0.0074 61568 0.0073
+Full, stock level (two-way clustered) rbi_rate_change  0.0052 0.3868 61568 0.0073
+Full, stock level (two-way clustered)          vix_m1  0.0253 0.2294 61568 0.0073
+Full, stock level (two-way clustered)      tone_score -0.4290 0.4902 61568 0.0073
+Full, stock level (two-way clustered)      tone_x_fed  0.0337 0.9666 61568 0.0073
+Full, stock level (two-way clustered)            beta  0.1171 0.2551 61568 0.0073
+Full, stock level (two-way clustered)        size_log -0.0626 0.0054 61568 0.0073
+{"partial_F_tone": {"F": 0.4481374562319196, "p": 0.6397778789083708, "df_diff": 2.0}, "robust_wald_tone": {"F": 0.4145090024110485, "p": 0.6615150904326073}, "robust_wald_all_policy_information": {"F": 2.506747775542299, "p": 0.04506179438777649}}
+
+== RQ4
+               model partition  accuracy  balanced_accuracy     f1  roc_auc  brier    ece  val_auc  selected
+      Majority class     TRAIN    0.5515             0.5000 0.0000   0.5000 0.2473 0.0000      NaN     False
+      Majority class      TEST    0.5025             0.5000 0.0000   0.5000 0.2524 0.0490      NaN     False
+ Logistic regression     TRAIN    0.5531             0.5133 0.2026   0.5515 0.2453 0.0072   0.5234     False
+ Logistic regression      TEST    0.5294             0.5278 0.3058   0.5455 0.2502 0.0409   0.5234     False
+             XGBoost     TRAIN    0.6366             0.6185 0.5224   0.6886 0.2224 0.0373   0.5175     False
+             XGBoost      TEST    0.5164             0.5152 0.3637   0.5317 0.2578 0.0762   0.5175     False
+Neural network (MLP)     TRAIN    0.6436             0.6258 0.5329   0.6960 0.2188 0.0209   0.5277      True
+Neural network (MLP)      TEST    0.5065             0.5056 0.3910   0.5152 0.2827 0.1556   0.5277      True
+          best_model                          baseline  best_correct_only  baseline_correct_only  mcnemar_chi2  p_mcnemar  accuracy_gain  acc_gain_ci_low  acc_gain_ci_high  auc_gain  auc_gain_ci_low  auc_gain_ci_high
+Neural network (MLP)                    Majority class               3215                   3134        1.0080     0.3154         0.0040          -0.0470            0.0528    0.0152          -0.0254            0.0610
+Neural network (MLP)               Logistic regression               2935                   3400       33.9852     0.0000        -0.0229          -0.0675            0.0196   -0.0303          -0.0806            0.0270
+Neural network (MLP) Neural network (MLP) without tone               3185                   3390        6.3294     0.0119        -0.0101          -0.0368            0.0216   -0.0139          -0.0458            0.0247
+     feature  mean_abs_shap
+    resid_sd         0.1254
+  nifty_pre5         0.1203
+      vix_m1         0.0913
+  tone_score         0.0856
+fed_surprise         0.0731
+  tone_x_fed         0.0512
+        beta         0.0490
+     pre_car         0.0376
+
+== Robustness
+spec                             Baseline: [0,+1], winsorized  Excluding U.S./India macro-release overlaps  Excluding all overlaps  Excluding cross-bank overlaps  No winsorization  Tone from LLM labels  Window [-1,+1]  Window [0,+5]
+test                                                                                                                                                                                                                                    
+RQ1 mean CAAR, All                                    -0.0414                                      -0.0336                 -0.0865                        -0.0910           -0.0276               -0.0414          0.0654        -0.0328
+RQ1 mean CAAR, Fed                                     0.0517                                       0.0624                  0.0411                         0.0234            0.0716                0.0517          0.1894         0.0278
+RQ1 mean CAAR, RBI                                    -0.1616                                      -0.1734                 -0.2900                        -0.2450           -0.1556               -0.1616         -0.0945        -0.1109
+RQ2 decisions |CAAR| Fed - RBI                         0.2278                                       0.2416                  0.3602                         0.2677            0.2248                0.2278          0.2989        -0.1073
+RQ3 Fed surprise (pp per bp)                           0.0243                                       0.0272                  0.0292                         0.0258            0.0253                0.0247          0.0186         0.0410
+RQ3 RBI rate change (pp per bp)                        0.0050                                       0.0073                  0.0162                         0.0081            0.0051                0.0050          0.0046         0.0076
+RQ3 tone (RBI)                                        -0.4105                                      -0.4948                 -0.6039                        -0.4546           -0.4059               -0.4077         -0.1252        -0.6952
+RQ3 tone x Fed                                         0.0331                                       0.1183                  0.6864                         0.3352           -0.0211                0.1102         -0.7246         0.4626
+
+ {
+ "seconds": 265.0,
+ "cpu": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+ "cpu_cores": 2,
+ "gpu": "none",
+ "gpu_used": "no (statistical models and XGBoost run on CPU)",
+ "python": "3.13.18",
+ "versions": {
+  "pandas": "2.2.3",
+  "numpy": "2.4.6",
+  "statsmodels": "0.15.0",
+  "scikit-learn": "1.6.1",
+  "xgboost": "3.4.1",
+  "scipy": "1.16.3"
+ },
+ "seed": 42
+}

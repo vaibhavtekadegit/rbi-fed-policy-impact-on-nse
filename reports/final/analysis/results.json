@@ -1,0 +1,182 @@
+{
+  "sample": {
+    "stock_events": 61957,
+    "events": 142,
+    "stocks": 493,
+    "stocks_per_event_mean": 436.3169014084507,
+    "winsor_bounds_0_1": [
+      -7.575095579353957,
+      9.717288094633258
+    ]
+  },
+  "rq1_magnitude_vs_placebo": {
+    "median_abs_event": 0.514355616191142,
+    "median_abs_placebo": 0.5447211005547121,
+    "mannwhitney_p_one_sided": 0.462358536450146
+  },
+  "rq2_models": {
+    "event_interaction": {
+      "Intercept": {
+        "coef": 0.5515229998252469,
+        "p": 9.711347797279025e-11
+      },
+      "is_fed": {
+        "coef": 0.22780781260811228,
+        "p": 0.04927665416040542
+      },
+      "is_min": {
+        "coef": 0.253863049034917,
+        "p": 0.10293855693717421
+      },
+      "is_fed:is_min": {
+        "coef": -0.4246697616985055,
+        "p": 0.028558505071014192
+      }
+    },
+    "stock_two_way_clustered": {
+      "Intercept": {
+        "coef": 2.081542416843004,
+        "p": 0.0
+      },
+      "is_fed": {
+        "coef": 0.09861257728150337,
+        "p": 0.09849330909267962
+      },
+      "is_min": {
+        "coef": 0.032859102577148275,
+        "p": 0.7171883797015304
+      },
+      "is_fed:is_min": {
+        "coef": -0.19709692124262693,
+        "p": 0.08953141732185968
+      }
+    }
+  },
+  "rq3_tests": {
+    "n_events": 141,
+    "partial_F_tone": {
+      "F": 0.4481374562319196,
+      "p": 0.6397778789083708,
+      "df_diff": 2.0
+    },
+    "robust_wald_tone": {
+      "F": 0.4145090024110485,
+      "p": 0.6615150904326073
+    },
+    "robust_wald_all_policy_information": {
+      "F": 2.506747775542299,
+      "p": 0.04506179438777649
+    },
+    "r2_reduced": 0.059477776716824415,
+    "r2_full": 0.06577344456788692,
+    "adj_r2_reduced": 0.02464362029892908,
+    "adj_r2_full": 0.01660362586093367,
+    "tone_sd": 0.22380205926278637,
+    "tone_by_group": [
+      {
+        "bank": "FED",
+        "event_type": "DEC",
+        "mean": 0.2898,
+        "std": 0.2173
+      },
+      {
+        "bank": "FED",
+        "event_type": "MIN",
+        "mean": 0.0566,
+        "std": 0.1094
+      },
+      {
+        "bank": "RBI",
+        "event_type": "DEC",
+        "mean": 0.0725,
+        "std": 0.2317
+      },
+      {
+        "bank": "RBI",
+        "event_type": "MIN",
+        "mean": 0.0243,
+        "std": 0.2219
+      }
+    ],
+    "corr_tone_surprise_fed": -0.2457446616291128,
+    "corr_tone_rate_change_rbi_dec": 0.7336913350418305
+  },
+  "rq4_tuning_seconds": 112.28673577308655,
+  "rq4": {
+    "train_events": 99,
+    "test_events": 43,
+    "train_rows": 41661,
+    "test_rows": 20296,
+    "train_share_up": 0.44850099613547445,
+    "test_share_up": 0.49748718959400867,
+    "first_test_event": "FED_DEC_2025-03-19",
+    "best_model": "Neural network (MLP)",
+    "best_params": {
+      "h": [
+        64,
+        32
+      ],
+      "alpha": 0.0001
+    },
+    "best_val_auc": 0.5276710217481332,
+    "confusion_best_test": {
+      "TN": 7065,
+      "FP": 3134,
+      "FN": 6882,
+      "TP": 3215
+    },
+    "features": [
+      "is_fed",
+      "is_min",
+      "fed_surprise",
+      "fed_surprise_missing",
+      "rbi_rate_change",
+      "vix_m1",
+      "nifty_pre5",
+      "tone_score",
+      "tone_x_fed",
+      "beta",
+      "size_log",
+      "resid_sd",
+      "pre_car",
+      "sec_Automobile and Auto Components",
+      "sec_Capital Goods",
+      "sec_Chemicals",
+      "sec_Construction",
+      "sec_Construction Materials",
+      "sec_Consumer Durables",
+      "sec_Consumer Services",
+      "sec_Diversified",
+      "sec_Fast Moving Consumer Goods",
+      "sec_Financial Services",
+      "sec_Healthcare",
+      "sec_Information Technology",
+      "sec_Media Entertainment & Publication",
+      "sec_Metals & Mining",
+      "sec_Oil Gas & Consumable Fuels",
+      "sec_Power",
+      "sec_Realty",
+      "sec_Services",
+      "sec_Telecommunication",
+      "sec_Textiles"
+    ]
+  },
+  "earnings_filter": "skipped: data/interim/results_dates.csv not in repo (NSE board-meeting file not downloaded)",
+  "run": {
+    "seconds": 265.0,
+    "cpu": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+    "cpu_cores": 2,
+    "gpu": "none",
+    "gpu_used": "no (statistical models and XGBoost run on CPU)",
+    "python": "3.13.18",
+    "versions": {
+      "pandas": "2.2.3",
+      "numpy": "2.4.6",
+      "statsmodels": "0.15.0",
+      "scikit-learn": "1.6.1",
+      "xgboost": "3.4.1",
+      "scipy": "1.16.3"
+    },
+    "seed": 42
+  }
+}

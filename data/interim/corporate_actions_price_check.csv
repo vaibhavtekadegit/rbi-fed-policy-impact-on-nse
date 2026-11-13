@@ -1,0 +1,135 @@
+symbol,ex_date,action,factor,status,raw_jump_pct,adjusted_return_pct
+360ONE,2023-03-02,split,0.5,before stock's first price,,
+360ONE,2023-03-02,bonus,0.5,before stock's first price,,
+AARTIIND,2021-06-22,bonus,0.5,ok,-50.5,-1.0
+ACUTAAS,2025-04-25,split,0.5,before stock's first price,,
+ADANIPOWER,2025-09-22,split,0.2,before stock's first price,,
+AFFLE,2021-10-07,split,0.2,before stock's first price,,
+AIIL,2026-01-13,bonus,0.2,ok,-78.4,7.8
+AJANTPHARM,2022-06-22,bonus,0.6667,ok,-34.0,-1.0
+ANANDRATHI,2025-03-05,bonus,0.5,ok,-53.3,-6.5
+ANANDRATHI,2026-06-03,bonus,0.5,ok,-49.6,0.9
+ANGELONE,2026-02-26,split,0.1,before stock's first price,,
+APLAPOLLO,2021-09-16,bonus,0.5,ok,-48.6,2.9
+ASHOKLEY,2025-07-16,bonus,0.5,ok,-50.3,-0.7
+ASTRAL,2023-03-14,bonus,0.75,ok,-26.2,-1.6
+AUBANK,2022-06-09,bonus,0.5,ok,-51.3,-2.5
+BAJAJFINSV,2022-09-13,split,0.2,before stock's first price,,
+BAJAJFINSV,2022-09-13,bonus,0.5,before stock's first price,,
+BAJFINANCE,2025-06-16,bonus,0.2,before stock's first price,,
+BAJFINANCE,2025-06-16,split,0.5,before stock's first price,,
+BBOX,2022-05-13,split,0.2,before stock's first price,,
+BDL,2024-05-24,split,0.5,before stock's first price,,
+BEL,2022-09-15,bonus,0.3333,ok,-66.9,-0.8
+BEML,2025-11-03,split,0.5,before stock's first price,,
+BERGEPAINT,2023-09-22,bonus,0.8333,ok,-11.1,6.6
+BLS,2022-05-13,bonus,0.5,ok,-48.3,3.4
+BLS,2022-12-08,bonus,0.5,ok,-47.2,5.6
+BLUESTARCO,2023-06-20,bonus,0.5,ok,-48.2,3.6
+BPCL,2024-06-21,bonus,0.5,ok,-50.9,-1.8
+BRIGADE,2026-06-17,bonus,0.75,ok,-21.4,4.8
+BSE,2022-03-21,bonus,0.3333,ok,-66.8,-0.4
+BSE,2025-05-23,bonus,0.3333,ok,-65.0,5.0
+CAMS,2025-12-05,split,0.2,before stock's first price,,
+CANBK,2024-05-15,split,0.2,before stock's first price,,
+CDSL,2024-08-23,bonus,0.5,ok,-45.9,8.2
+CESC,2021-09-17,split,0.1,before stock's first price,,
+CGCL,2024-03-05,bonus,0.5,before stock's first price,,
+CGCL,2024-03-05,split,0.5,before stock's first price,,
+CHOICEIN,2022-09-22,bonus,0.5,ok,-47.2,5.7
+CHOICEIN,2024-02-20,bonus,0.5,ok,-48.6,2.8
+COCHINSHIP,2024-01-10,split,0.5,before stock's first price,,
+COFORGE,2025-06-04,split,0.2,before stock's first price,,
+CONCOR,2025-07-04,bonus,0.8,ok,-19.5,0.6
+CUB,2026-06-12,bonus,0.75,ok,-21.5,4.7
+CUPID,2024-04-04,bonus,0.5,before stock's first price,,
+CUPID,2024-04-04,split,0.1,before stock's first price,,
+CUPID,2026-03-09,bonus,0.2,CHECK: still >10% after adjusting,-77.2,13.9
+DRREDDY,2024-10-28,split,0.2,before stock's first price,,
+ECLERX,2022-09-21,bonus,0.6667,ok,-29.9,5.1
+ECLERX,2026-03-13,bonus,0.5,ok,-50.0,0.0
+ELECON,2024-07-19,split,0.5,before stock's first price,,
+GAIL,2022-09-06,bonus,0.6667,ok,-32.0,2.1
+GODFRYPHLP,2025-09-16,bonus,0.3333,ok,-64.4,6.9
+GPIL,2021-10-26,bonus,0.5,before stock's first price,,
+GPIL,2021-10-26,split,0.5,before stock's first price,,
+GPIL,2024-10-04,split,0.2,before stock's first price,,
+HAL,2023-09-28,split,0.5,before stock's first price,,
+HDFCAMC,2025-11-26,bonus,0.5,ok,-49.8,0.4
+HDFCBANK,2025-08-26,bonus,0.5,ok,-50.4,-0.9
+HEGAM,2024-10-18,split,0.2,before stock's first price,,
+HINDPETRO,2024-06-21,bonus,0.6667,ok,-34.9,-2.4
+IEX,2021-12-03,bonus,0.3333,ok,-64.9,5.2
+IGL,2025-01-31,bonus,0.5,ok,-49.0,2.0
+INDIAMART,2023-06-21,bonus,0.5,ok,-49.4,1.1
+INOXWIND,2024-05-24,bonus,0.25,ok,-72.7,9.1
+IOC,2022-06-30,bonus,0.6667,ok,-32.4,1.4
+IPCALAB,2022-01-10,split,0.5,before stock's first price,,
+IRB,2023-02-22,split,0.1,before stock's first price,,
+IRB,2026-03-30,bonus,0.5,ok,-45.9,8.2
+IRCON,2021-05-20,bonus,0.5,ok,-47.7,4.7
+IRCTC,2021-10-28,split,0.2,before stock's first price,,
+JBMA,2022-02-21,split,0.4,before stock's first price,,
+JBMA,2025-01-31,split,0.5,before stock's first price,,
+JINDALSAW,2024-10-09,split,0.5,before stock's first price,,
+JUBLFOOD,2022-04-19,split,0.2,before stock's first price,,
+KARURVYSYA,2025-08-26,bonus,0.8333,ok,-18.1,-1.8
+KIMS,2024-09-13,split,0.2,before stock's first price,,
+KOTAKBANK,2026-01-14,split,0.2,before stock's first price,,
+KPRMILL,2021-09-24,split,0.2,before stock's first price,,
+KSB,2024-07-25,split,0.2,before stock's first price,,
+LALPATHLAB,2025-12-19,bonus,0.5,ok,-50.2,-0.4
+LICI,2026-05-29,bonus,0.5,ok,-50.4,-0.9
+LODHA,2023-05-31,bonus,0.5,ok,-48.1,3.8
+MAZDOCK,2024-12-27,split,0.5,before stock's first price,,
+MCX,2026-01-02,split,0.2,before stock's first price,,
+MOTHERSON,2022-10-03,bonus,0.6667,ok,-33.1,0.4
+MOTHERSON,2025-07-18,bonus,0.6667,ok,-34.4,-1.6
+MOTILALOFS,2024-06-10,bonus,0.25,ok,-73.0,8.1
+MSUMI,2022-11-16,bonus,0.7143,ok,-26.9,2.3
+MSUMI,2025-07-18,bonus,0.6667,ok,-32.5,1.3
+NAUKRI,2025-05-07,split,0.2,before stock's first price,,
+NAVA,2025-01-20,split,0.5,before stock's first price,,
+NBCC,2024-10-07,bonus,0.6667,ok,-31.5,2.8
+NESTLEIND,2024-01-05,split,0.1,before stock's first price,,
+NESTLEIND,2025-08-08,bonus,0.5,ok,-50.9,-1.9
+NMDC,2024-12-27,bonus,0.3333,ok,-67.7,-3.0
+NUVAMA,2025-12-26,split,0.2,before stock's first price,,
+NYKAA,2022-11-10,bonus,0.1667,ok,-82.2,6.5
+OIL,2024-07-02,bonus,0.6667,ok,-32.0,2.0
+PATANJALI,2025-09-11,bonus,0.3333,ok,-66.8,-0.3
+PCBL,2022-04-11,split,0.5,before stock's first price,,
+PERSISTENT,2024-03-28,split,0.5,before stock's first price,,
+PFC,2023-09-21,bonus,0.8,ok,-19.9,0.1
+PGEL,2024-07-10,split,0.1,before stock's first price,,
+PHOENIXLTD,2024-09-20,bonus,0.5,ok,-47.8,4.4
+PIDILITIND,2025-09-23,bonus,0.5,ok,-51.0,-2.0
+POWERGRID,2021-07-29,bonus,0.75,ok,-26.6,-2.1
+POWERGRID,2023-09-12,bonus,0.75,ok,-27.7,-3.6
+RECLTD,2022-08-17,bonus,0.75,ok,-23.2,2.4
+REDINGTON,2021-08-18,bonus,0.5,ok,-50.0,-0.1
+RELIANCE,2024-10-28,bonus,0.5,ok,-49.8,0.5
+RITES,2024-09-20,bonus,0.5,ok,-45.4,9.2
+RKFORGE,2022-03-14,split,0.2,before stock's first price,,
+SARDAEN,2023-08-04,split,0.1,before stock's first price,,
+SCHAEFFLER,2022-02-08,split,0.2,before stock's first price,,
+SHRIPISTON,2023-07-24,bonus,0.5,ok,-47.5,5.0
+SHRIRAMFIN,2025-01-10,split,0.2,before stock's first price,,
+SRF,2021-10-13,bonus,0.2,ok,-80.7,-3.4
+TARIL,2025-02-14,bonus,0.5,ok,-52.5,-5.0
+TATAINVEST,2025-10-14,split,0.1,before stock's first price,,
+TATASTEEL,2022-07-28,split,0.1,before stock's first price,,
+TDPOWERSYS,2022-10-31,split,0.2,before stock's first price,,
+TDPOWERSYS,2026-08-24,split,0.5,before stock's first price,,
+THANGAMAYL,2023-07-17,bonus,0.5,ok,-46.4,7.1
+TORNTPHARM,2022-07-08,bonus,0.5,ok,-50.3,-0.5
+TRENT,2026-06-04,bonus,0.6667,ok,-33.4,-0.0
+UNOMINDA,2022-07-07,bonus,0.5,ok,-48.8,2.5
+VBL,2021-06-10,bonus,0.6667,before stock's first price,,
+VBL,2022-06-06,bonus,0.6667,before stock's first price,,
+VBL,2023-06-15,split,0.5,before stock's first price,,
+VBL,2024-09-12,split,0.4,before stock's first price,,
+VTL,2022-03-24,split,0.2,before stock's first price,,
+WIPRO,2024-12-03,bonus,0.5,ok,-50.1,-0.2
+ZFCVINDIA,2026-06-24,bonus,0.1667,ok,-83.5,-0.8
+ZYDUSWELL,2025-09-18,split,0.2,before stock's first price,,

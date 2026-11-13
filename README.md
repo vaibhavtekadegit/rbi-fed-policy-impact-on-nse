@@ -1,7 +1,7 @@
 # Local or Global? How RBI and Federal Reserve Announcements Move Indian Stocks
 
-Capstone project, QM640 Data Analytics Capstone, Walsh College, Fall 2026.
-Author: Vaibhav Tekade. Instructor: Prof. Javad Katibai.
+Capstone project, QM640 Data Analytics Capstone, 
+Author: Vaibhav Tekade.
 
 The project measures how NIFTY 500 stocks react to 142 monetary policy announcements from the Reserve Bank of India (RBI)
 and the U.S. Federal Reserve (Fed) between October 2021 and September 2026, and whether the tone of the policy text

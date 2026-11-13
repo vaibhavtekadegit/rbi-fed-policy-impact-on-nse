@@ -2,3 +2,4 @@
 *.parquet
 __pycache__/
 *.pyc
+data/capstone.duckdb

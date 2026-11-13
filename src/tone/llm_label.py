@@ -24,7 +24,7 @@ SENTENCES = ROOT / "data/interim/sentences.csv"
 GUIDELINE = ROOT / "data/labels/guideline.md"
 OUT = ROOT / "data/labels/llm_labels.csv"
 PROMPT_VERSION = "v1.0"
-MODEL = os.environ.get("LLM_MODEL", "claude-sonnet-5-5")
+MODEL = os.environ.get("LLM_MODEL", "claude-haiku-5-5")      # cheapest; switch to claude-sonnet-5-5 if kappa < .60
 BATCH = 40
 LABELS = {"Hawkish", "Dovish", "Neutral"}
 

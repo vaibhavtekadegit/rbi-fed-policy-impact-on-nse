@@ -29,6 +29,24 @@ MODEL = os.environ.get("LLM_MODEL", "claude-haiku-5-5")      # cheapest; switch 
 BATCH = 40
 LABELS = {"Hawkish", "Dovish", "Neutral"}
 USE_TEMPERATURE = True          # set to False automatically if the model rejects the temperature setting
+FAILURES = ROOT / "data/labels/llm_label_failures.csv"     # sentences the model would not label in valid JSON
+
+
+class ParseError(Exception):
+    pass
+
+
+def parse_labels(text):
+    """Extract the JSON list of {id, label} from the reply; tolerate code fences and extra prose."""
+    text = re.sub(r"```(?:json)?", "", text)
+    for m in re.finditer(r"\[.*?\](?=\s*$)|\[.*\]", text, re.S):
+        try:
+            out = json.loads(m.group(0))
+            if isinstance(out, list):
+                return {str(o.get("id")): str(o.get("label", "")).strip().capitalize() for o in out if isinstance(o, dict)}
+        except json.JSONDecodeError:
+            continue
+    raise ParseError(text[:300])
 
 SYSTEM = (
     "You are an annotator of central bank communication. Label each sentence as Hawkish, Dovish or Neutral "
@@ -62,10 +80,30 @@ def call(batch, api_key, max_retries=6):
         if r.status_code >= 400:                                        # show the API's own explanation
             raise RuntimeError(f"API error {r.status_code}: {r.text[:800]}")
         js = r.json()
-        text = "".join(b.get("text", "") for b in js["content"])
-        out = json.loads(re.search(r"\[.*\]", text, re.S).group(0))
-        return {o["id"]: o["label"] for o in out}, js.get("model", MODEL)
+        text = "".join(b.get("text", "") for b in js.get("content", []) if b.get("type") == "text")
+        try:
+            return parse_labels(text), js.get("model", MODEL)
+        except ParseError:
+            if attempt < 1:                                    # one plain retry
+                continue
+            raise
     raise RuntimeError("API kept failing; rerun later (progress is saved)")
+
+
+def call_robust(batch, api_key):
+    """Call; if the reply cannot be parsed, split the batch in halves down to single sentences."""
+    try:
+        return call(batch, api_key)
+    except ParseError as e:
+        if len(batch) == 1:
+            pd.DataFrame([{"sent_id": batch["sent_id"].iloc[0], "reply_start": str(e),
+                           "at": datetime.now(timezone.utc).isoformat(timespec="seconds")}]).to_csv(
+                FAILURES, mode="a", header=not FAILURES.exists(), index=False)
+            return {}, MODEL
+        half = len(batch) // 2
+        a, m1 = call_robust(batch.iloc[:half], api_key)
+        b, m2 = call_robust(batch.iloc[half:], api_key)
+        return {**a, **b}, m1 or m2
 
 
 def run(api_key, limit=None):
@@ -77,7 +115,7 @@ def run(api_key, limit=None):
     print(f"{len(done):,} already labeled; {len(todo):,} to go")
     for i in range(0, len(todo), BATCH):
         b = todo.iloc[i:i + BATCH]
-        labels, model_used = call(b, api_key)
+        labels, model_used = call_robust(b, api_key)
         rows = [{"sent_id": s, "label": labels.get(s), "model": model_used, "prompt_version": PROMPT_VERSION,
                  "temperature": "0" if USE_TEMPERATURE else "model default (not settable)",
                  "labeled_at": datetime.now(timezone.utc).isoformat(timespec="seconds")} for s in b["sent_id"]]

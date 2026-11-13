@@ -14,6 +14,17 @@ import pandas as pd
 
 import model as m
 
+# The models run on CPU. If the Space is on ZeroGPU hardware, ZeroGPU stops apps that declare no GPU function,
+# so a small no-op function is registered when the "spaces" package is present (it is not needed elsewhere).
+try:
+    import spaces
+
+    @spaces.GPU(duration=10)
+    def _gpu_check():
+        return "ok"
+except ImportError:
+    pass
+
 TM = m.META["test_metrics"]
 SHARE_UP = m.EVENTS.groupby("bank")["share_up"].mean()
 REPO = "https://github.com/vaibhavtekadegit/rbi-fed-policy-impact-on-nse"
@@ -159,4 +170,4 @@ with gr.Blocks(title="RBI and Fed announcements: NIFTY 500 reaction") as demo:
         gr.Markdown(ABOUT)
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0", server_port=7860, ssr_mode=False)

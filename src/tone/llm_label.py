@@ -48,7 +48,8 @@ def call(batch, api_key, max_retries=6):
         if r.status_code in (429, 500, 502, 503, 529):
             time.sleep(min(60, 5 * 2 ** attempt))
             continue
-        r.raise_for_status()
+        if r.status_code >= 400:                                        # show the API's own explanation
+            raise RuntimeError(f"API error {r.status_code}: {r.text[:800]}")
         js = r.json()
         text = "".join(b.get("text", "") for b in js["content"])
         out = json.loads(re.search(r"\[.*\]", text, re.S).group(0))

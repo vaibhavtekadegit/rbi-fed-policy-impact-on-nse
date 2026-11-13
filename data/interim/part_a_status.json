@@ -1,0 +1,10 @@
+{
+  "A2 BIS rates": "fallback: existing repo files (coverage gaps remain); rbi_rate partial; fed_rate partial",
+  "A3 DGS2": "partial (existing repo file fred_dgs2.csv)",
+  "A4 T-bill 3M": "MISSING: upload FBIL 3-month T-bill history (RBI surprise stays NA)",
+  "A5 results dates": "MISSING: NSE API blocked and no CF-BM file uploaded",
+  "A6 macro dates": "done",
+  "A7 events.csv": "done",
+  "run_at": "2026-11-13T02:25:31",
+  "note": "Run in Claude's workspace on 2026-11-13: BIS, FRED and NSE are not reachable there, so A2/A3 used the existing repo files and A5 is pending. Re-run notebooks/04_part_a_final_data.ipynb in Colab with DGS2.csv and the NSE Board Meetings file to complete them."
+}

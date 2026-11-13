@@ -1,4 +1,4 @@
-# Tone Labeling Guideline (v1.0)
+# Tone Labeling Guideline (v1.1)
 
 Used for both the **author's gold-standard labels** and the **LLM training labels**. Adapted from the hawkish–dovish annotation scheme of Shah, Paturi and Chava (2023) for FOMC text, extended to RBI Monetary Policy Committee (MPC) resolutions and minutes.
 
@@ -26,6 +26,12 @@ Used for both the **author's gold-standard labels** and the **LLM training label
 6. **Projections:** an upward revision to inflation or growth → Hawkish; downward → Dovish; a projection with no change mentioned → label by its level relative to target if stated, otherwise Neutral.
 7. **Financial stability, regulation and operations** (SOMA, repo operations, directives to the Desk) → Neutral, unless they explicitly tighten or ease policy.
 8. When genuinely unsure → Neutral, and note it in the *notes* column (gold set only).
+
+### RBI-specific rules (added in v1.1 after the development check)
+
+9. **Risks and outlook remarks without a policy call → Neutral.** RBI text often lists risks to growth or to the outlook (trade, tariffs, geopolitics, remittances, weather, global financial conditions) or describes supportive conditions for investment. If the sentence does not state or clearly imply a change in the repo rate, the stance or liquidity, label it **Neutral**, even when the risk is to growth.
+10. **Vigilance and above-target inflation → Hawkish.** Sentences in which the MPC or a member commits to "remain vigilant", "keep a close vigil" or "remain watchful" on inflation, or that project or describe inflation **above the 4 per cent target**, are **Hawkish**. Projections **below** 4 per cent are **Dovish**; at 4 per cent, **Neutral**.
+11. **Current growth data → Neutral.** Descriptions of the latest GDP, gross value added (GVA), sector or capacity-utilisation figures are **Neutral** unless the sentence draws an inflation or policy conclusion from them. A member's vote for the status quo that balances growth and inflation reasons is **Neutral**.
 
 ## Examples (real sentences from the corpus; excluded from the gold sample)
 
@@ -76,6 +82,7 @@ Used for both the **author's gold-standard labels** and the **LLM training label
 - **Gold standard:** the author labels 300 sentences (150 RBI, 150 Fed; 100 development + 200 evaluation) **without seeing any LLM label**.
 - **LLM labels:** the same definitions, rules and examples form the LLM prompt (temperature 0; model, version and prompt recorded).
 - **Acceptance:** LLM labels are used for training only if Cohen's κ with the author's development labels is at least .60; otherwise the prompt or guideline is revised (new version number) and relabeled.
+- **Version history:** v1.0 (Nov 13) used for all sentences; dev κ = .757 (Fed, accepted) and .483 (RBI, rejected). v1.1 adds rules 9–11 for RBI text only; RBI sentences are relabeled with v1.1 and Fed labels stay at v1.0.
 - **Tone score** per announcement: (H − D) / (H + D + N).
 
 Reference: Shah, A., Paturi, S., & Chava, S. (2023). Trillion dollar words: A new financial dataset, task & market analysis. In *Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)* (pp. 6664–6679). https://doi.org/10.18653/v1/2023.acl-long.368

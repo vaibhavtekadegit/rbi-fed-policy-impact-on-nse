@@ -1,0 +1,13 @@
+{
+  "selected_model": "TF-IDF + linear SVM",
+  "kappa_rule_met": false,
+  "llm_labels_used": true,
+  "deviation": "Author decision (Nov 13): LLM labels used although RBI dev kappa (.589, guideline v1.1) is below .60; Sonnet 5.5 did not improve it (.577). Reported as a deviation; the classifier is judged on the eval gold set.",
+  "training_sentences": 19905,
+  "python": "3.13.16",
+  "cpu": "x86_64",
+  "gpu": "none",
+  "seed": 42,
+  "events_scored": 142,
+  "tone_score_corr_llm": 0.9846812846113769
+}

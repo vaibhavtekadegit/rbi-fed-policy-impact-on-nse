@@ -99,7 +99,8 @@ versions are recorded in `reports/final/analysis/results.json`.
 
 ## Deployment
 
-A Gradio app in `app/` runs on Hugging Face Spaces (link to be added). It has three tabs:
+A Gradio app in `app/` runs on Hugging Face Spaces: https://huggingface.co/spaces/Vaibhavtekade/rbi-fed-nse-app
+(free CPU hardware). It has three tabs:
 
 - **Try a scenario:** enter an RBI or Fed announcement (bank, type, Fed 2-year yield surprise or RBI rate change,
   India VIX, recent NIFTY 50 return) and optionally paste the policy text. The app scores the tone with
@@ -111,6 +112,11 @@ A Gradio app in `app/` runs on Hugging Face Spaces (link to be added). It has th
 Run locally: `pip install -r app/requirements.txt` then `python app/app.py`. `tests/test_app.py` checks that the app
 reproduces the reported XGBoost test metrics (accuracy .516, ROC-AUC .532). Rebuild `app/data/` after a new analysis
 run with `python app/build_app_data.py`.
+
+**Continuous deployment:** `.github/workflows/deploy_space.yml` runs `tests/test_app.py` and, if it passes, uploads the
+app, `app/data/` and `models/` to the Space with `app/deploy_space.py` (Hugging Face API, no Git LFS needed). It runs on
+every push to main that changes `app/` or `models/`, and on demand from the Actions tab. It needs the repository secret
+`HF_TOKEN` (a Hugging Face token with write access).
 
 ## License and use
 

@@ -48,7 +48,7 @@ def run_scenario(bank, ev_type, fed_surprise, rbi_change, vix, nifty_pre5, text,
         tone_msg = (f"Tone score from your text: **{tone:+.3f}** ({len(sent_table)} sentences: "
                     f"{counts.get('Hawkish', 0)} hawkish, {counts.get('Dovish', 0)} dovish, {counts.get('Neutral', 0)} neutral).")
     else:
-        tone_msg = f"No text given, so the tone slider value **{tone_manual:+.2f}** is used."
+        tone_msg = f"No text pasted, so tone {tone_manual:+.2f} is used (Advanced section)."
 
     ev = m.event_features(bank, ev_type, fed_surprise, rbi_change, vix, nifty_pre5, tone_used)
     pred = m.predict_stocks(ev)
@@ -60,7 +60,8 @@ def run_scenario(bank, ev_type, fed_surprise, rbi_change, vix, nifty_pre5, text,
     cols = ["symbol", "company", "sector", "prob_up"]
     top = pred.nlargest(10, "prob_up")[cols].round(3)
     bottom = pred.nsmallest(10, "prob_up")[cols].round(3)
-    return summary, m.sector_table(pred), top, bottom, sent_table
+    return (summary, gr.update(value=m.sector_table(pred), visible=True), gr.update(value=top, visible=True),
+            gr.update(value=bottom, visible=True), gr.update(value=sent_table, visible=tone is not None))
 
 
 def toggle_inputs(bank, ev_type):
@@ -142,18 +143,20 @@ with gr.Blocks(title="RBI and Fed announcements: NIFTY 500 reaction") as demo:
                 ev_type = gr.Radio(["Decision", "Minutes"], value="Decision", label="Announcement type")
                 fed_s = gr.Slider(-30, 30, value=0, step=1, label="Fed surprise: day-0 change in U.S. 2-year yield (bp)")
                 rbi_c = gr.Slider(-50, 50, value=0, step=5, label="RBI repo rate change (bp)", visible=False)
-                vix = gr.Number(value=round(m.META["vix_last"], 2), label="India VIX (previous close)")
-                npre = gr.Number(value=round(m.META["nifty_pre5_last"], 2), label="NIFTY 50 return over previous 5 days (%)")
-                tone_s = gr.Slider(-1, 1, value=0, step=0.05, label="Tone score, used only if no text is pasted (hawkish > 0)")
-                text = gr.Textbox(lines=8, label="Optional: paste the statement or minutes text to score its tone")
+                text = gr.Textbox(lines=6, label="Policy text (optional): paste the statement or minutes to score its tone")
+                with gr.Accordion("Advanced: market conditions and manual tone", open=False):
+                    vix = gr.Number(value=round(m.META["vix_last"], 2), label="India VIX (previous close)")
+                    npre = gr.Number(value=round(m.META["nifty_pre5_last"], 2), label="NIFTY 50 return over previous 5 days (%)")
+                    tone_s = gr.Slider(-1, 1, value=0, step=0.05, label="Tone score if no text is pasted (hawkish > 0)")
+                    gr.Markdown(f"Defaults are the values on {m.META['last_price_date']}, the last date in the data.")
                 go = gr.Button("Predict", variant="primary")
             with gr.Column(scale=2):
-                out_md = gr.Markdown()
-                out_sec = gr.Dataframe(label="By sector: mean probability and share of stocks predicted up")
+                out_md = gr.Markdown("Choose the announcement on the left and press **Predict**.")
+                out_sec = gr.Dataframe(label="By sector: mean probability and share of stocks predicted up", visible=False)
                 with gr.Row():
-                    out_top = gr.Dataframe(label="10 stocks most likely to rise")
-                    out_bot = gr.Dataframe(label="10 stocks least likely to rise")
-                out_sent = gr.Dataframe(label="Sentence tone labels", wrap=True)
+                    out_top = gr.Dataframe(label="10 stocks most likely to rise", visible=False)
+                    out_bot = gr.Dataframe(label="10 stocks least likely to rise", visible=False)
+                out_sent = gr.Dataframe(label="Sentence tone labels", wrap=True, visible=False)
         bank.change(toggle_inputs, [bank, ev_type], [fed_s, rbi_c])
         ev_type.change(toggle_inputs, [bank, ev_type], [fed_s, rbi_c])
         go.click(run_scenario, [bank, ev_type, fed_s, rbi_c, vix, npre, text, tone_s],

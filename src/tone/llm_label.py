@@ -2,7 +2,8 @@
 LLM weak labels for every sentence (data preparation only; the analysis classifier is the author's own).
 
 - Prompt = data/labels/guideline.md (definitions, rules, real examples) + a batch of sentences.
-- Temperature 0; the exact model id returned by the API, prompt version and time are stored per row.
+- Temperature 0 where the model allows it (newer models reject the setting; then the model default is used and recorded);
+  the exact model id returned by the API, prompt version, temperature and time are stored per row.
 - Resumable: sentences already in the output file are skipped.
 
 Output: data/labels/llm_labels.csv  (sent_id, label, model, prompt_version, labeled_at)
@@ -27,6 +28,7 @@ PROMPT_VERSION = "v1.0"
 MODEL = os.environ.get("LLM_MODEL", "claude-haiku-5-5")      # cheapest; switch to claude-sonnet-5-5 if kappa < .60
 BATCH = 40
 LABELS = {"Hawkish", "Dovish", "Neutral"}
+USE_TEMPERATURE = True          # set to False automatically if the model rejects the temperature setting
 
 SYSTEM = (
     "You are an annotator of central bank communication. Label each sentence as Hawkish, Dovish or Neutral "
@@ -36,17 +38,26 @@ SYSTEM = (
 
 
 def call(batch, api_key, max_retries=6):
+    global USE_TEMPERATURE
     items = "\n".join(f'{{"id": "{r.sent_id}", "bank": "{r.bank}", "sentence": {json.dumps(r.text)}}}'
                       for r in batch.itertuples())
-    body = {"model": MODEL, "max_tokens": 4000, "temperature": 0,
+    body = {"model": MODEL, "max_tokens": 4000,
             "system": [{"type": "text", "text": SYSTEM + GUIDELINE.read_text(),
                         "cache_control": {"type": "ephemeral"}}],          # prompt caching: guideline sent once
             "messages": [{"role": "user", "content": f"Label these {len(batch)} sentences:\n{items}"}]}
     headers = {"x-api-key": api_key, "anthropic-version": "2023-06-01", "content-type": "application/json"}
     for attempt in range(max_retries):
+        if USE_TEMPERATURE:
+            body["temperature"] = 0
+        else:
+            body.pop("temperature", None)
         r = requests.post("https://api.anthropic.com/v1/messages", headers=headers, json=body, timeout=180)
         if r.status_code in (429, 500, 502, 503, 529):
             time.sleep(min(60, 5 * 2 ** attempt))
+            continue
+        if r.status_code == 400 and USE_TEMPERATURE and "temperature" in r.text:
+            USE_TEMPERATURE = False                                     # newer models fix sampling; retry without it
+            print("  note: model does not accept a temperature setting; using its default sampling")
             continue
         if r.status_code >= 400:                                        # show the API's own explanation
             raise RuntimeError(f"API error {r.status_code}: {r.text[:800]}")
@@ -59,7 +70,7 @@ def call(batch, api_key, max_retries=6):
 
 def run(api_key, limit=None):
     sent = pd.read_csv(SENTENCES)
-    done = pd.read_csv(OUT) if OUT.exists() else pd.DataFrame(columns=["sent_id", "label", "model", "prompt_version", "labeled_at"])
+    done = pd.read_csv(OUT) if OUT.exists() else pd.DataFrame(columns=["sent_id", "label", "model", "prompt_version", "temperature", "labeled_at"])
     todo = sent[~sent["sent_id"].isin(done["sent_id"])]
     if limit:
         todo = todo.head(limit)
@@ -68,6 +79,7 @@ def run(api_key, limit=None):
         b = todo.iloc[i:i + BATCH]
         labels, model_used = call(b, api_key)
         rows = [{"sent_id": s, "label": labels.get(s), "model": model_used, "prompt_version": PROMPT_VERSION,
+                 "temperature": "0" if USE_TEMPERATURE else "model default (not settable)",
                  "labeled_at": datetime.now(timezone.utc).isoformat(timespec="seconds")} for s in b["sent_id"]]
         bad = [r["sent_id"] for r in rows if r["label"] not in LABELS]
         rows = [r for r in rows if r["label"] in LABELS]          # missing/invalid ones are retried on the next run

@@ -1,0 +1,21 @@
+sector,stocks,stock_events,mean_car,share_up
+Financial Services,98,12267,-0.0284,0.4671
+Capital Goods,69,8593,0.0833,0.4725
+Healthcare,44,5413,0.0145,0.4776
+Automobile and Auto Components,40,5051,0.0095,0.4603
+Fast Moving Consumer Goods,28,3706,-0.0632,0.4617
+Chemicals,26,3615,-0.1414,0.4581
+Information Technology,25,2951,-0.2119,0.4429
+Consumer Services,23,2200,-0.0059,0.4668
+Oil Gas & Consumable Fuels,18,2302,-0.1105,0.4587
+Power,18,2210,-0.0638,0.4566
+Metals & Mining,18,2308,-0.0603,0.4892
+Consumer Durables,16,2144,0.0262,0.4762
+Services,14,1638,-0.0521,0.464
+Construction,13,1744,-0.0717,0.4622
+Telecommunication,11,1475,-0.0923,0.4298
+Construction Materials,11,1429,-0.1618,0.4458
+Realty,11,1491,-0.0353,0.4742
+Textiles,5,710,-0.141,0.4282
+Media Entertainment & Publication,4,568,-0.0574,0.4419
+Diversified,1,142,0.2599,0.4718

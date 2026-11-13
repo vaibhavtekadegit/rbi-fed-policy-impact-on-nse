@@ -1,0 +1,19 @@
+item,count,handling
+NIFTY 500 constituents in the index file,501,Universe as of October 2026
+Constituents without NSE equity prices,4,Excluded (3 REITs and 1 placeholder symbol)
+Stocks with price files,497,Used
+Trading days in the price window (Apr 2021 to Sep 2026),1358,
+Stocks listed after April 2021 (shorter history),111,Kept; a stock-event needs at least 100 valid estimation days
+Missing trading days inside a stock's listed period (total),77,Left missing (no filling); returns over the gap are not used
+Stock-days with complex corporate actions,31,"Stock-events with such a day in [-1,+1] excluded"
+Stock-event candidates (142 events x stocks with prices),70574,
+Excluded: fewer than 100 estimation days (recent listing),8605,Dropped
+Excluded: complex corporate action on days -1 to +1,8,Dropped
+Excluded: no return on day 0 or day +1,4,Dropped
+Stock-events kept,61957,87.8% of candidates
+Fed events without a 2-year yield surprise,1,FED_MIN_2021-10-13: dropped from RQ3 (141 events); in RQ4 set to 0 with a missing-value flag
+RBI events with a market-based surprise,0,"India T-bill not used; RBI rate change (bp) used instead, 0 for holds and minutes"
+Stock CARs below the 1st percentile,620,Winsorized to -7.58 pp
+Stock CARs above the 99th percentile,620,Winsorized to 9.72 pp
+Stock CARs exactly zero,0,Would be excluded from RQ4 (direction undefined)
+Announcements with another event or macro release on days -1 to +1,46,Kept in the main analysis; excluded in robustness checks

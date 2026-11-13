@@ -1,78 +1,87 @@
-"""Draws docs/architecture.png (system architecture of the capstone project). Run: python docs/architecture.py"""
+"""Draws docs/architecture.png (end-to-end workflow of the capstone project). Run: python docs/architecture.py"""
 from pathlib import Path
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+from matplotlib.lines import Line2D
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Patch
 
-LAYERS = [  # (layer title, fill, edge, boxes)
-    ("1. Data sources", "#eef3f8", "#1f4e79",
-     ["RBI MPC resolutions\nand minutes (62)", "FOMC statements\nand minutes (80)", "NSE Bhavcopy, corporate\nactions, NIFTY 50, India VIX",
-      "BIS policy rates, FRED\n2-year yield, BLS dates"]),
-    ("2. Ingestion\n(Colab 01-04)", "#fdf1e7", "#c55a11",
-     ["Downloaders and\nvalidation checks", "Corporate-action\nprice adjustment", "Event table: release time,\nday 0, surprise, overlaps"]),
-    ("3. Storage", "#f2f2f2", "#555555",
-     ["DuckDB database\n(12 tables, 4 views)", "GitHub repository\n(versioned CSV files)"]),
-    ("4. Tone pipeline\n(Colab 05-06)", "#fdf1e7", "#c55a11",
-     ["Sentence splitter\n(20,205 sentences)", "LLM weak labels\n(Claude Haiku 5.5)",
-      "Own classifiers: keywords, TF-IDF\nLR / SVM, text CNN; checked on\n300 author gold labels", "Tone score per\nannouncement"]),
-    ("5. Analysis\n(Colab 07)", "#fdf1e7", "#c55a11",
-     ["Event study: market model,\nCAR[0,+1], CAAR", "RQ1-RQ3: t, BMP-KP, clustered,\nWelch, permutation, regressions",
-      "RQ4: logistic, XGBoost, MLP\n(expanding-window tuning)"]),
-    ("6. Outputs and\ndeployment", "#e9f5ec", "#2e7d32",
-     ["Reports: tables,\nfigures, results.json", "Users: analysts,\nstudents, instructor", "Gradio app on\nHugging Face Spaces",
-      "Saved models\n(tone_clf_v1, xgb_rq4)"]),
+KIND = {  # stage type: (box fill, edge colour, legend label)
+    "data": ("#eef3f8", "#1f4e79", "Data and storage"),
+    "prep": ("#fdf1e7", "#c55a11", "Preprocessing, EDA and features"),
+    "model": ("#f1ecf7", "#5b3a8c", "Modelling and evaluation"),
+    "deploy": ("#e9f5ec", "#2e7d32", "Deployment and users"),
+}
+STAGES = [  # (stage title, kind, boxes, chain the boxes left to right)
+    ("1. Data sources", "data",
+     ["RBI MPC resolutions and minutes\n62 HTML files (rbi.org.in)", "FOMC statements and minutes\n80 HTML files (federalreserve.gov)",
+      "NSE Bhavcopy: 497 stocks,\ncorporate actions, NIFTY 50, India VIX", "BIS policy rates, FRED 2-year\nyield, BLS release dates"], False),
+    ("2. Ingestion and\nstorage", "data",
+     ["Scripted downloads and\nvalidation checks (Colab 01-04)", "GitHub repository\n(versioned CSV files)",
+      "DuckDB database\n(12 tables, 4 views, SQL access)"], True),
+    ("3. Preprocessing", "prep",
+     ["Corporate-action price\nadjustment, ISIN chaining", "Release time to NSE day 0;\noverlap flags",
+      "Missing values: at least 100\nestimation days; missing flag", "Outliers: CAR winsorized at\n1st and 99th percentiles"], True),
+    ("4. Exploratory\ndata analysis", "prep",
+     ["Events, policy rates and\noverlaps over time", "CAR and CAAR distributions,\nsectors", "Tone by bank and type;\ncross-correlation of returns"], False),
+    ("5. Feature\nengineering", "prep",
+     ["Market model AR, CAR[0,+1],\nCAAR (days -130 to -11)", "Policy news: Fed 2-year\nsurprise, RBI rate change",
+      "Tone: 20,205 sentences, LLM weak\nlabels, own TF-IDF + linear SVM", "Stock features: beta, size, volatility,\npre-CAR; scaling; sector one-hot"], False),
+    ("6. Model", "model",
+     ["Chronological split\n99 train / 43 test events", "RQ1-RQ3: t, BMP-KP, Welch,\npermutation, OLS partial F",
+      "RQ4: logistic regression, XGBoost,\nneural network (MLP)"], True),
+    ("7. Evaluation", "model",
+     ["Train and test accuracy,\nROC-AUC, Brier, calibration", "McNemar, event-block\nbootstrap, Holm correction",
+      "SHAP, tone ablation,\nrobustness checks", "Reports: tables, figures,\nresults.json"], True),
+    ("8. Deployment", "deploy",
+     ["Saved models\n(tone_clf_v1, xgb_rq4)", "GitHub Actions:\ntest, then deploy",
+      "Gradio app on Hugging Face\nSpaces (free CPU)", "Users: investors, analysts,\nstudents, instructor"], True),
 ]
-W, X0, X1, BH, GAP = 14, 2.6, 13.8, 0.85, 1.35
-fig, ax = plt.subplots(figsize=(12, 9.6))
-ax.set_xlim(0, W); ax.set_ylim(-0.3, len(LAYERS) * GAP + 0.1); ax.axis("off")
+W, X0, X1, BH, GAP = 15, 2.9, 14.85, 0.78, 1.18
+n_st = len(STAGES)
+fig, ax = plt.subplots(figsize=(12.5, 11.2))
+ax.set_xlim(0, W); ax.set_ylim(-0.75, n_st * GAP + 0.05); ax.axis("off")
 centers = {}
-for i, (title, fill, edge, boxes) in enumerate(LAYERS):
-    y = (len(LAYERS) - 1 - i) * GAP + 0.2
-    ax.add_patch(FancyBboxPatch((0.1, y - 0.18), W - 0.2, BH + 0.36, boxstyle="round,pad=0.02", fc="#fafafa", ec="#bbbbbb", lw=0.8))
-    ax.text(1.2, y + BH / 2, title, ha="center", va="center", fontsize=9.5, weight="bold", color="#333333")
+
+
+def harrow(p, q, dashed=False):
+    ax.add_patch(FancyArrowPatch(p, q, arrowstyle="-|>", mutation_scale=10, color="#555555", lw=0.9,
+                                 linestyle="--" if dashed else "-", shrinkA=1, shrinkB=1))
+
+
+for i, (title, kind, boxes, chain) in enumerate(STAGES):
+    fill, edge, _ = KIND[kind]
+    y = (n_st - 1 - i) * GAP + 0.15
+    ax.add_patch(FancyBboxPatch((0.15, y), 2.3, BH, boxstyle="round,pad=0.02,rounding_size=0.1", fc=edge, ec=edge))
+    ax.text(1.3, y + BH / 2, title, ha="center", va="center", fontsize=9.3, weight="bold", color="white")
+    if i < n_st - 1:   # pipeline spine between stages
+        ax.add_patch(FancyArrowPatch((1.3, y), (1.3, y - GAP + BH), arrowstyle="-|>", mutation_scale=13, color="#333333", lw=1.4))
     n = len(boxes)
-    bw = (X1 - X0 - 0.25 * (n - 1)) / n
+    bw = (X1 - X0 - 0.3 * (n - 1)) / n
     for j, b in enumerate(boxes):
-        x = X0 + j * (bw + 0.25)
+        x = X0 + j * (bw + 0.3)
         ax.add_patch(FancyBboxPatch((x, y), bw, BH, boxstyle="round,pad=0.02,rounding_size=0.08", fc=fill, ec=edge, lw=1.1))
-        ax.text(x + bw / 2, y + BH / 2, b, ha="center", va="center", fontsize=8.6)
+        ax.text(x + bw / 2, y + BH / 2, b, ha="center", va="center", fontsize=7.9)
         centers[(i, j)] = (x, y, bw)
+        if chain and j > 0:
+            px, _, pw = centers[(i, j - 1)]
+            harrow((px + pw, y + BH / 2), (x, y + BH / 2), dashed=(i == n_st - 1 and j in (1, 2)))
+    ax.plot([2.45, X0], [y + BH / 2, y + BH / 2], color=edge, lw=0.8, ls=":")
 
+# extra links that are not left-to-right
+x, y, w = centers[(0, 0)]
+for j in range(4):
+    xa, ya, wa = centers[(0, j)]
+    harrow((xa + wa / 2, ya), (x + w / 2 + (j - 1.5) * 0.35, y - GAP + BH))
 
-def arrow(a, b, side_a="bottom", side_b="top", label=None, rad=0.0):
-    xa, ya, wa = centers[a]; xb, yb, wb = centers[b]
-    pa = {"bottom": (xa + wa / 2, ya), "right": (xa + wa, ya + BH / 2), "top": (xa + wa / 2, ya + BH), "left": (xa, ya + BH / 2)}[side_a]
-    pb = {"top": (xb + wb / 2, yb + BH), "left": (xb, yb + BH / 2), "bottom": (xb + wb / 2, yb), "right": (xb + wb, yb + BH / 2)}[side_b]
-    ax.add_patch(FancyArrowPatch(pa, pb, arrowstyle="-|>", mutation_scale=11, color="#555555", lw=0.9,
-                                 connectionstyle=f"arc3,rad={rad}", shrinkA=2, shrinkB=2))
-    if label:
-        ax.text((pa[0] + pb[0]) / 2, (pa[1] + pb[1]) / 2 + 0.08, label, ha="center", fontsize=7.5, style="italic", bbox=dict(fc="white", ec="none", pad=0.5), color="#444444")
-
-
-def route_left(a, b, x_route=2.4, label=None):
-    """Elbow connector along the left margin (keeps the line clear of other boxes)."""
-    xa, ya, _ = centers[a]; xb, yb, _ = centers[b]
-    ax.plot([xa, x_route, x_route], [ya + BH / 2, ya + BH / 2, yb + BH / 2], color="#555555", lw=0.9)
-    ax.add_patch(FancyArrowPatch((x_route, yb + BH / 2), (xb, yb + BH / 2), arrowstyle="-|>", mutation_scale=11,
-                                 color="#555555", lw=0.9, shrinkB=2))
-    if label:
-        ax.text(x_route - 0.05, (ya + yb) / 2 + BH / 2, label, rotation=90, ha="right", va="center", fontsize=7.5, style="italic", color="#444444")
-
-
-for j in range(4):                       # sources to downloaders
-    arrow((0, j), (1, 0))
-arrow((1, 0), (1, 1), "right", "left"); arrow((1, 1), (1, 2), "right", "left")
-arrow((1, 1), (2, 1)); arrow((1, 2), (2, 1))
-arrow((2, 1), (2, 0), "left", "right", "rebuilt in seconds")
-arrow((2, 1), (3, 0)); ax.text(12.45, 3.93, "tone_scores.csv", fontsize=7.5, style="italic", color="#444444", ha="left")
-arrow((3, 0), (3, 1), "right", "left"); arrow((3, 1), (3, 2), "right", "left", "train")
-arrow((3, 2), (3, 3), "right", "left")
-arrow((3, 3), (2, 1), "top", "bottom")
-route_left((2, 0), (4, 0), label="SQL queries")
-arrow((4, 0), (4, 1), "right", "left"); arrow((4, 1), (4, 2), "right", "left")
-arrow((4, 1), (5, 0)); arrow((4, 2), (5, 3))
-arrow((5, 3), (5, 2), "left", "right"); arrow((5, 2), (5, 1), "left", "right"); arrow((5, 0), (5, 1), "right", "left")
-ax.set_title("System architecture: RBI and Fed announcements and Indian stocks", fontsize=12, weight="bold", pad=6)
+legend = [Patch(fc=f, ec=e, label=l) for f, e, l in KIND.values()] + [
+    Line2D([0], [0], color="#333333", lw=1.4, label="Pipeline order (stage to stage)"),
+    Line2D([0], [0], color="#555555", lw=0.9, label="Data or results flow"),
+    Line2D([0], [0], color="#555555", lw=0.9, ls="--", label="Automated CI/CD on push to main"),
+]
+ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, -0.005), ncol=4, fontsize=8, frameon=True,
+          edgecolor="#bbbbbb", title="Legend", title_fontsize=8.5)
+ax.set_title("End-to-end workflow: RBI and Fed announcements and Indian stocks", fontsize=12.5, weight="bold", pad=6)
 fig.tight_layout()
 fig.savefig(Path(__file__).with_name("architecture.png"), dpi=220, bbox_inches="tight", facecolor="white")

@@ -107,7 +107,7 @@ def event_features(bank, ev_type, fed_surprise, rbi_rate_change, vix, nifty_pre5
 
 def predict_stocks(event, stock_df=None):
     stock_df = STOCKS if stock_df is None else stock_df
-    p = XGB.predict_proba(design(stock_df, event))[:, 1]
+    p = XGB.predict_proba(design(stock_df, event))[:, 1].astype("float64")   # float32 shows long decimals
     out = stock_df.assign(prob_up=p)
     return out
 

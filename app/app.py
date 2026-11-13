@@ -91,7 +91,7 @@ def run_replay(event_id):
           f"Stock-level accuracy for this announcement: **{acc:.1%}** ({len(pred)} stocks). "
           f"Actual CAAR[0,+1]: {e['caar']:+.3f} percentage points.")
     sec = (pred.groupby("sector").agg(stocks=("up", "size"), predicted_up=("prob_up", lambda x: (x >= 0.5).mean()),
-                                      actual_up=("up", "mean")).round(3).reset_index())
+                                      actual_up=("up", "mean")).astype({"predicted_up": float, "actual_up": float}).round(3).reset_index())
     return md, sec
 
 

@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SENTENCES = ROOT / "data/interim/sentences.csv"
 GUIDELINE = ROOT / "data/labels/guideline.md"
 OUT = ROOT / "data/labels/llm_labels.csv"
-PROMPT_VERSION = "v1.0"
+PROMPT_VERSION = "v1.1"          # v1.1 adds RBI-specific rules 9-11 (Nov 13); Fed labels remain v1.0
 MODEL = os.environ.get("LLM_MODEL", "claude-haiku-5-5")      # cheapest; switch to claude-sonnet-5-5 if kappa < .60
 BATCH = 40
 LABELS = {"Hawkish", "Dovish", "Neutral"}
@@ -106,8 +106,13 @@ def call_robust(batch, api_key):
         return {**a, **b}, m1 or m2
 
 
-def run(api_key, limit=None):
+def run(api_key, limit=None, sent_ids=None, banks=None):
+    """Label sentences not yet in OUT; optionally only the given sent_ids and/or banks."""
     sent = pd.read_csv(SENTENCES)
+    if sent_ids is not None:
+        sent = sent[sent["sent_id"].isin(set(sent_ids))]
+    if banks is not None:
+        sent = sent[sent["bank"].isin(banks)]
     done = pd.read_csv(OUT) if OUT.exists() else pd.DataFrame(columns=["sent_id", "label", "model", "prompt_version", "temperature", "labeled_at"])
     todo = sent[~sent["sent_id"].isin(done["sent_id"])]
     if limit:
@@ -126,4 +131,31 @@ def run(api_key, limit=None):
     final = pd.read_csv(OUT).drop_duplicates("sent_id", keep="last")
     final.to_csv(OUT, index=False)
     print(final["label"].value_counts().to_dict(), "| total", len(final), "of", len(sent))
+    return final
+
+
+def dev_kappa(labels_path, bank=None):
+    """Cohen's kappa of LLM labels against the author's development gold labels (overall or one bank)."""
+    from sklearn.metrics import cohen_kappa_score
+    gold = pd.read_csv(ROOT / "data/labels/gold_300_labels.csv")
+    gold = gold[gold["partition"] == "dev"]
+    if bank:
+        gold = gold[gold["bank"] == bank]
+    d = gold.merge(pd.read_csv(labels_path)[["sent_id", "label"]].rename(columns={"label": "llm"}), on="sent_id")
+    k = cohen_kappa_score(d["label"], d["llm"], labels=sorted(LABELS))
+    print(f"dev kappa ({bank or 'all'}, n={len(d)}): {k:.3f} -> {'PASS' if k >= 0.60 else 'FAIL'} (needs >= .60)")
+    return k
+
+
+def merge_rbi_relabel(rbi_path):
+    """Final llm_labels.csv = Fed rows from v1.0 + RBI rows from the v1.1 relabel; v1.0 file archived."""
+    v10 = pd.read_csv(OUT)
+    archive = OUT.with_name("llm_labels_v1_0.csv")
+    if not archive.exists():
+        v10.to_csv(archive, index=False)
+    v10 = pd.read_csv(archive)
+    rbi = pd.read_csv(rbi_path).drop_duplicates("sent_id", keep="last")
+    final = pd.concat([v10[v10["sent_id"].str.startswith("FED_")], rbi[rbi["sent_id"].str.startswith("RBI_")]])
+    final.to_csv(OUT, index=False)
+    print(final.groupby("prompt_version")["sent_id"].count().to_dict(), "| total", len(final))
     return final

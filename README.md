@@ -77,6 +77,7 @@ python src/data/build_database.py      # DuckDB database, about 5 seconds
 python src/tone/classifier.py          # tone models and tone scores, about 10 minutes on CPU
 python src/analysis/final_analysis.py  # RQ1-RQ4 and robustness, about 5 minutes on CPU
 python src/analysis/eda_summary.py     # EDA tables, data-quality log and two figures, a few seconds
+python src/analysis/event_cases.py     # per-announcement tests and screens (event_cases.csv)
 pytest tests
 ```
 
